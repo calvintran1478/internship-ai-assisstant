@@ -1,6 +1,6 @@
 import falcon
 
-class TestResource:
+class ChatResource:
     async def on_post(self, req, resp):
         body = await req.get_media()
 
