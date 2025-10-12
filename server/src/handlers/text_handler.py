@@ -1,9 +1,18 @@
+import functools
+import falcon
 
-from falcon.media import BaseHandler
+class TextHandler(falcon.media.BaseHandler):
+    DEFAULT_CHARSET = 'utf-8'
 
-class TextHandler(BaseHandler):
-    async def serialize_async(media, content_type) -> bytes:
-        return media.encode("utf-8")
+    @classmethod
+    @functools.lru_cache
+    def _get_charset(cls, content_type):
+        _, params = falcon.parse_header(content_type)
+        return params.get('charset') or cls.DEFAULT_CHARSET
 
-    async def deserialize_async(stream, content_type, content_length) -> bytes:
-        return await stream.read()
+    def deserialize(self, stream, content_type, content_length):
+        data = stream.read()
+        return data.decode(self._get_charset(content_type))
+
+    def serialize(self, media, content_type):
+        return media.encode(self._get_charset(content_type))

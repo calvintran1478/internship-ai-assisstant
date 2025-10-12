@@ -7,9 +7,9 @@ from handlers.text_handler import TextHandler
 app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT)
 
 # Set up media handlers
-media_handlers = falcon.media.Handlers({ falcon.MEDIA_TEXT: TextHandler })
-app.req_options.media_handlers = media_handlers
-app.resp_options.media_handlers = media_handlers
+text_handler = TextHandler()
+app.req_options.media_handlers['text/plain'] = text_handler
+app.resp_options.media_handlers['text/plain'] = text_handler
 
 # Set up server routes for each resource
 test_resource = TestResource()
