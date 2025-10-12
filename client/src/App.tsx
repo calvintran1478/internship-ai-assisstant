@@ -6,6 +6,8 @@ function App() {
 
     const sendRequest = async (event: Event) => {
         event.preventDefault();
+        document.querySelector("form")!.reset();
+
         const updatedChat = [...chat()];
         updatedChat.push(prompt);
 
