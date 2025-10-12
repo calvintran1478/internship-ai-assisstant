@@ -6,7 +6,7 @@ function App() {
 
     const sendRequest = async (event: Event) => {
         event.preventDefault();
-        const response = await fetch("http://localhost:8000/api/v1/test", {
+        const response = await fetch("http://localhost:8000/api/v1/chat", {
             method: "POST",
             body: prompt
         });
