@@ -7,18 +7,28 @@ function App() {
     const sendRequest = async (event: Event) => {
         event.preventDefault();
         document.querySelector("form")!.reset();
-
-        const updatedChat = [...chat()];
-        updatedChat.push(prompt);
+        setChat(chat().concat([prompt, ""]));
 
         const response = await fetch("http://localhost:8000/api/v1/chat", {
             method: "POST",
             body: prompt
         });
 
-        if (response.ok) {
-            updatedChat.push(await response.text());
-            setChat(updatedChat);
+        const reader = response.body!.getReader();
+        const decoder = new TextDecoder("utf-8");
+        const updateIndex = chat().length - 1;
+        let done = false;
+
+        while (!done) {
+            const { value, done: readerDone } = await reader.read();
+            done = readerDone;
+
+            if (value) {
+                const chunkValue = decoder.decode(value, { stream: true });
+                const updatedChat = [...chat()];
+                updatedChat[updateIndex] = updatedChat[updateIndex] + chunkValue;
+                setChat(updatedChat);
+            }
         }
     }
 
