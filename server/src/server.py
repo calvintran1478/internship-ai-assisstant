@@ -3,9 +3,10 @@ import falcon.asgi
 from resources.chat import ChatResource
 from resources.user import UserResource
 from handlers.text_handler import TextHandler
+from middleware.async_pool_middleware import AsyncPoolMiddleware
 
 # Initialize server with default plain/text content type
-app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT)
+app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT, middleware=[AsyncPoolMiddleware()])
 
 # Set up media handlers
 text_handler = TextHandler()
