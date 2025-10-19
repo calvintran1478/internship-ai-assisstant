@@ -1,9 +1,13 @@
+import logging
 import falcon
 import falcon.asgi
 from resources.chat import ChatResource
 from resources.user import UserResource
 from handlers.text_handler import TextHandler
 from middleware.async_pool_middleware import AsyncPoolMiddleware
+
+# Add error loggign
+logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
 
 # Initialize server with default plain/text content type
 app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT, middleware=[AsyncPoolMiddleware()])
