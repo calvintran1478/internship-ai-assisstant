@@ -1,7 +1,7 @@
 import falcon
 import datetime
-import hmac
-import hashlib
+from hmac import HMAC
+from hashlib import sha256
 from repositories import user_repository
 from email_validator import validate_email, EmailNotValidError
 from bcrypt import hashpw, gensalt, checkpw
@@ -62,7 +62,7 @@ class UserResource:
         # Respond with access token
         current_time = int(datetime.datetime.now(datetime.UTC).timestamp())
         access_claims = urlsafe_b64encode(user_id.encode("utf-8") + current_time.to_bytes(8, byteorder="big"))
-        signature = urlsafe_b64encode(hmac.HMAC(b"secret", access_claims, digestmod=hashlib.sha256).digest())
+        signature = urlsafe_b64encode(HMAC(b"secret", access_claims, digestmod=sha256).digest())
         access_token = access_claims + signature
 
         resp.status = falcon.HTTP_200
