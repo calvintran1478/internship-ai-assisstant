@@ -60,8 +60,8 @@ class UserResource:
             return
 
         # Respond with access token
-        current_time = int(datetime.datetime.now(datetime.UTC).timestamp())
-        access_claims = urlsafe_b64encode(user_id.encode("utf-8") + current_time.to_bytes(8, byteorder="big"))
+        expiration_time = int(datetime.datetime.now(datetime.UTC).timestamp()) + 259200
+        access_claims = urlsafe_b64encode(user_id.encode("utf-8") + expiration_time.to_bytes(8, byteorder="big"))
         signature = urlsafe_b64encode(HMAC(b"secret", access_claims, digestmod=sha256).digest())
         access_token = access_claims + signature
 
