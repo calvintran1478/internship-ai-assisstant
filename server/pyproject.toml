@@ -9,7 +9,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "falcon (>=4.1.0,<5.0.0)",
-    "uvicorn (>=0.37.0,<0.38.0)"
+    "uvicorn (>=0.37.0,<0.38.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "bcrypt (>=5.0.0,<6.0.0)"
 ]
 
 [tool.poetry]
