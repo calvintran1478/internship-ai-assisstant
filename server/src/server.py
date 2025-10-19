@@ -6,7 +6,7 @@ from resources.user import UserResource
 from handlers.text_handler import TextHandler
 from middleware.async_pool_middleware import AsyncPoolMiddleware
 
-# Add error loggign
+# Add error logging
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
 
 # Initialize server with default plain/text content type
