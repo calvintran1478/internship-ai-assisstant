@@ -1,8 +1,8 @@
 import falcon
 import asyncpg
+from repositories import user_repository
 from email_validator import validate_email, EmailNotValidError
 from bcrypt import hashpw, gensalt
-from uuid import uuid4
 
 class UserResource:
     async def on_post(self, req, resp):
@@ -22,17 +22,15 @@ class UserResource:
             return
 
         # Check if a user with the email already exists
-        statement = await req.context.conn.prepare("SELECT EXISTS(SELECT 1 FROM users WHERE email=$1)")
-        user_exists = await statement.fetchval(email)
+        user_exists = await user_repository.exists(req.context.conn, email)
         if user_exists:
             resp.status = falcon.HTTP_409
             resp.text = "User with email already exists"
             return
 
         # Hash password and register user in the database
-        hashed_password = hashpw(password.encode("utf-8"), gensalt())
-        statement = await req.context.conn.prepare("INSERT INTO users (user_id, email, password, first_name, last_name) VALUES ($1, $2, $3, $4, $5)")
-        await statement.fetchval(uuid4(), email, password, first_name, last_name)
+        hashed_password = str(hashpw(password.encode("utf-8"), gensalt()))
+        await user_repository.create(req.context.conn, email, hashed_password, first_name, last_name)
 
         resp.status = falcon.HTTP_201
         resp.text = f"{email}\n{first_name}\n{last_name}"
