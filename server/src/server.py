@@ -21,4 +21,5 @@ app.resp_options.media_handlers['text/plain'] = text_handler
 user_resource = UserResource()
 chat_resource = ChatResource()
 app.add_route("/api/v1/users", user_resource)
+app.add_route("/api/v1/users/login", user_resource, suffix="login")
 app.add_route("/api/v1/chat", chat_resource)
