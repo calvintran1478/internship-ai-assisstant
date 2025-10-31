@@ -32,3 +32,22 @@ class ResumeResource:
         req.context.s3_client.put_object(Body=resume_data, Bucket=os.getenv("BUCKET_NAME"), Key=resume_id)
 
         resp.status = falcon.HTTP_204 if resume_exists else falcon.HTTP_201
+
+    async def on_get(self, req, resp):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Check if resume exists
+        resume_id = f"{req.context.user_id}/resume"
+        resume_exists = self.key_exists(os.getenv("BUCKET_NAME"), resume_id, req.context.s3_client)
+        if not resume_exists:
+            resp.status = falcon.HTTP_400
+            resp.text = "Resume not found"
+            return
+
+        # Fetch resume from S3
+        response = req.context.s3_client.get_object(Bucket=os.getenv("BUCKET_NAME"), Key=resume_id)
+
+        resp.status = falcon.HTTP_200
+        resp.data = response["Body"].read()
