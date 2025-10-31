@@ -1,6 +1,6 @@
 import { createSignal, Show, For } from 'solid-js'
 
-function App() {
+const HomePage = () => {
     const [chat, setChat] = createSignal([] as string[]);
     let prompt = "";
 
@@ -58,4 +58,4 @@ function App() {
     )
 }
 
-export default App
+export default HomePage;
