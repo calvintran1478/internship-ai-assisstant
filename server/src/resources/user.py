@@ -2,10 +2,11 @@ import falcon
 import datetime
 from hmac import HMAC
 from hashlib import sha256
-from repositories import user_repository
 from email_validator import validate_email, EmailNotValidError
 from bcrypt import hashpw, gensalt, checkpw
 from base64 import urlsafe_b64encode
+from repositories import user_repository
+from middleware.auth_middleware import authenticate_user
 
 class UserResource:
     async def on_post(self, req, resp):
@@ -67,3 +68,15 @@ class UserResource:
 
         resp.status = falcon.HTTP_200
         resp.data = access_token
+
+    @falcon.before(authenticate_user)
+    async def on_get_name(self, req, resp):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Get first and last name of the user
+        first_name, last_name = await user_repository.get_name(req.context.conn, req.context.user_id)
+
+        resp.status = falcon.HTTP_200
+        resp.text = f"{first_name}\n{last_name}"

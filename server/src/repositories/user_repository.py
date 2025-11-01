@@ -15,3 +15,8 @@ async def get_login_password(conn, email) -> Tuple[str, str]:
     if row == None:
         return "", ""
     return str(row["user_id"]), row["password"]
+
+async def get_name(conn, user_id) -> tuple[str, str]:
+    statement = await conn.prepare("SELECT first_name, last_name FROM users WHERE user_id=$1")
+    row = await statement.fetchrow(user_id)
+    return row["first_name"], row["last_name"]

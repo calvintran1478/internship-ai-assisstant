@@ -30,6 +30,7 @@ resume_resource = ResumeResource()
 
 # Set up server routes for each resource
 app.add_route("/api/v1/users", user_resource)
+app.add_route("/api/v1/users/name", user_resource, suffix="name")
 app.add_route("/api/v1/users/login", user_resource, suffix="login")
 app.add_route("/api/v1/chat", chat_resource)
 app.add_route("/api/v1/resume", resume_resource)
