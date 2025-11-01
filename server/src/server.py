@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from resources.user import UserResource
 from resources.chat import ChatResource
 from resources.resume import ResumeResource
-from handlers.text_handler import TextHandler
+from media_handlers.text_handler import TextHandler
 from middleware.async_pool_middleware import AsyncPoolMiddleware
 from middleware.s3_middleware import S3Middleware
 
