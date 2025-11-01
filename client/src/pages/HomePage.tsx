@@ -1,8 +1,38 @@
-import { createSignal, Show, For } from 'solid-js'
+import { createSignal, Show, For, Suspense, createEffect } from 'solid-js';
+import { A } from '@solidjs/router'; 
+import { useNavigate } from "@solidjs/router";
 
 const HomePage = () => {
+    const navigate = useNavigate();
+
+    const [firstName, setFirstName] = createSignal("");
+    const [lastName, setLastName] = createSignal("");
     const [chat, setChat] = createSignal([] as string[]);
+
     let prompt = "";
+
+    const getName = async () => {
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch("http://localhost:8000/api/v1/users/name", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            const arr = (await response.text()).split("\n")
+            setFirstName(arr[0])
+            setLastName(arr[1])
+        } else if (response.status === 401) {
+            navigate("/login");
+        }
+    }
+
+    createEffect(() => {
+        getName()
+    })
 
     const sendRequest = async (event: Event) => {
         event.preventDefault();
@@ -35,6 +65,13 @@ const HomePage = () => {
     return (
         <div>
             <Show when={chat().length === 0}>
+                <Suspense>
+                    <A href="/profile">
+                        <div class="flex justify-center items-center fixed top-6 right-6 rounded-full w-12 h-12 border">
+                            <p>{firstName().toUpperCase()[0]}{lastName().toUpperCase()[0]}</p>
+                        </div>
+                    </A>
+                </Suspense>
                 <div class="flex flex-col justify-center items-center h-screen w-screen">
                     <form class="flex flex-col" onSubmit={sendRequest}>
                         <label class="text-3xl mb-8">Hello! How can I help with your career?</label>
