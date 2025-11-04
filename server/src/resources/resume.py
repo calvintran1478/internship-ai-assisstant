@@ -42,7 +42,7 @@ class ResumeResource:
         resume_id = f"{req.context.user_id}/resume"
         resume_exists = self.key_exists(os.getenv("BUCKET_NAME"), resume_id, req.context.s3_client)
         if not resume_exists:
-            resp.status = falcon.HTTP_400
+            resp.status = falcon.HTTP_404
             resp.text = "Resume not found"
             return
 
