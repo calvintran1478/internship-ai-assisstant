@@ -112,3 +112,18 @@ class UserResource:
         await user_repository.set_concentration(req.context.conn, req.context.user_id, concentration)
 
         resp.status = falcon.HTTP_204 if prev_concentration != None else falcon.HTTP_201
+
+    @falcon.before(authenticate_user)
+    async def on_get_concentration(self, req, resp):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Get user concentration
+        concentration = await user_repository.get_concentration(req.context.conn, req.context.user_id)
+
+        if concentration == None:
+            resp.status = falcon.HTTP_404
+        else:
+            resp.staus = falcon.HTTP_200
+            resp.text = concentration

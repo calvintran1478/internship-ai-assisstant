@@ -54,6 +54,27 @@ const ProfilePage = () => {
         }
     }
 
+    const fetchConcentration = async () => {
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            return response.text();
+        } else if (response.status === 401) {
+            navigate("/login");
+        } else if (response.status === 404) {
+            return "";
+        }
+    }
+
+    const [concentration] = createResource(fetchConcentration);
+
     const setConcentration = async(event: Event) => {
         event.preventDefault();
 
@@ -96,16 +117,18 @@ const ProfilePage = () => {
             <form onSubmit={setConcentration}>
                 <div class="flex items-center">
                     <label class="mx-6 text-xl">Concentration:</label>
-                    <select class="border h-8" ref={concentrationInput} name="concentration" id="concentration">
-                        <option value="">--Please choose an option--</option>
-                        <option value="applied-mathematics">Applied Mathematics</option>
-                        <option value="artificial-intelligence">Artificial Intelligence</option>
-                        <option value="artificial-intelligence-healthcare">Artificial Intelligence in Healthcare</option>
-                        <option value="computer-science">Computer Science</option>
-                        <option value="data-science">Data Science</option>
-                        <option value="data-science-biology">Data Science for Biology</option>
-                        <option value="quantum-computing">Quantum Computing</option>
-                    </select>
+                    <Suspense>
+                        <select class="border h-8" ref={concentrationInput} value={concentration()} name="concentration" id="concentration">
+                            <option value="">--Please choose an option--</option>
+                            <option value="applied-mathematics">Applied Mathematics</option>
+                            <option value="artificial-intelligence">Artificial Intelligence</option>
+                            <option value="artificial-intelligence-healthcare">Artificial Intelligence in Healthcare</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="data-science-biology">Data Science for Biology</option>
+                            <option value="quantum-computing">Quantum Computing</option>
+                        </select>
+                    </Suspense>
                     <button class="border w-12 h-8 ml-8">Save</button>
                 </div>
             </form>
