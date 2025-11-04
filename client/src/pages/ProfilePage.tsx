@@ -1,4 +1,4 @@
-import { createResource, Show, Suspense } from "solid-js";
+import { createSignal, createResource, Show, Suspense } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 
 const ProfilePage = () => {
@@ -6,6 +6,8 @@ const ProfilePage = () => {
 
     let resumeInput!: HTMLInputElement;
     let concentrationInput!: HTMLSelectElement;
+
+    const [concentrationChanged, setConcentrationChanged] = createSignal(false);
 
     const fetchResume = async () => {
         const token = localStorage.getItem("accessToken");
@@ -73,6 +75,10 @@ const ProfilePage = () => {
         }
     }
 
+    const updateConcentrationChanged = () => {
+        setConcentrationChanged(concentrationInput.value !== concentration());
+    }
+
     const [concentration] = createResource(fetchConcentration);
 
     const setConcentration = async(event: Event) => {
@@ -89,7 +95,9 @@ const ProfilePage = () => {
             body: concentrationInput.value
         });
 
-        if (response.status === 401) {
+        if (response.ok) {
+            setConcentrationChanged(false);
+        } else if (response.status === 401) {
             navigate("/login");
         }
     }
@@ -118,7 +126,7 @@ const ProfilePage = () => {
                 <div class="flex items-center">
                     <label class="mx-6 text-xl">Concentration:</label>
                     <Suspense>
-                        <select class="border h-8" ref={concentrationInput} value={concentration()} name="concentration" id="concentration">
+                        <select class="border h-8" ref={concentrationInput} value={concentration()} onChange={updateConcentrationChanged} name="concentration" id="concentration">
                             <option value="">--Please choose an option--</option>
                             <option value="applied-mathematics">Applied Mathematics</option>
                             <option value="artificial-intelligence">Artificial Intelligence</option>
@@ -130,6 +138,9 @@ const ProfilePage = () => {
                         </select>
                     </Suspense>
                     <button class="border w-12 h-8 ml-8">Save</button>
+                    <Show when={concentrationChanged()}>
+                        <span class="text-lg mx-6">(Unsaved)</span>
+                    </Show>
                 </div>
             </form>
             <div class="h-56">
