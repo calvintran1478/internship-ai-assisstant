@@ -9,6 +9,17 @@ from repositories import user_repository
 from middleware.auth_middleware import authenticate_user
 
 class UserResource:
+    def __init__(self):
+        self.concentrations = (
+            "applied-mathematics",
+            "artificial-intelligence",
+            "artificial-intelligence-healthcare",
+            "computer-science",
+            "data-science",
+            "data-science-biology",
+            "quantum-computing"
+        )
+
     async def on_post(self, req, resp):
         # Parse request body
         email, password, first_name, last_name = (await req.get_media()).split("\n")
@@ -80,3 +91,24 @@ class UserResource:
 
         resp.status = falcon.HTTP_200
         resp.text = f"{first_name}\n{last_name}"
+
+    @falcon.before(authenticate_user)
+    async def on_put_concentration(self, req, resp):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Read request body
+        concentration = await req.get_media()
+        if concentration not in self.concentrations:
+            resp.status = falcon.HTTP_400
+            resp.text = "Invalid concentration"
+            return
+
+        # Check if concentration was previously set
+        prev_concentration = await user_repository.get_concentration(req.context.conn, req.context.user_id)
+
+        # Set concentration
+        await user_repository.set_concentration(req.context.conn, req.context.user_id, concentration)
+
+        resp.status = falcon.HTTP_204 if prev_concentration != None else falcon.HTTP_201

@@ -5,6 +5,7 @@ const ProfilePage = () => {
     const navigate = useNavigate();
 
     let resumeInput!: HTMLInputElement;
+    let concentrationInput!: HTMLSelectElement;
 
     const fetchResume = async () => {
         const token = localStorage.getItem("accessToken");
@@ -53,14 +54,23 @@ const ProfilePage = () => {
         }
     }
 
-    const setJobKeywords = async(event: Event) => {
-        event.preventDefault();
-        return;
-    }
-
     const setConcentration = async(event: Event) => {
         event.preventDefault();
-        return;
+
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+            method: "PUT",
+            headers: { "Authorization": `Bearer ${token}` },
+            body: concentrationInput.value
+        });
+
+        if (response.status === 401) {
+            navigate("/login");
+        }
     }
 
     return (
@@ -86,9 +96,9 @@ const ProfilePage = () => {
             <form onSubmit={setConcentration}>
                 <div class="flex items-center">
                     <label class="mx-6 text-xl">Concentration:</label>
-                    <select class="border h-8" name="concentration" id="concentration">
+                    <select class="border h-8" ref={concentrationInput} name="concentration" id="concentration">
                         <option value="">--Please choose an option--</option>
-                        <option value="applied-math">Applied Mathematics</option>
+                        <option value="applied-mathematics">Applied Mathematics</option>
                         <option value="artificial-intelligence">Artificial Intelligence</option>
                         <option value="artificial-intelligence-healthcare">Artificial Intelligence in Healthcare</option>
                         <option value="computer-science">Computer Science</option>

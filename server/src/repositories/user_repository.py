@@ -20,3 +20,11 @@ async def get_name(conn, user_id) -> tuple[str, str]:
     statement = await conn.prepare("SELECT first_name, last_name FROM users WHERE user_id=$1")
     row = await statement.fetchrow(user_id)
     return row["first_name"], row["last_name"]
+
+async def get_concentration(conn, user_id) -> str:
+    statement = await conn.prepare("SELECT concentration FROM users WHERE user_id=$1")
+    return await statement.fetchval(user_id)
+
+async def set_concentration(conn, user_id, concentration) -> None:
+    statement = await conn.prepare("UPDATE users SET concentration=$2 WHERE user_id=$1")
+    await statement.fetchval(user_id, concentration)
