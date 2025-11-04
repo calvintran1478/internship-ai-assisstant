@@ -53,6 +53,16 @@ const ProfilePage = () => {
         }
     }
 
+    const setJobKeywords = async(event: Event) => {
+        event.preventDefault();
+        return;
+    }
+
+    const setConcentration = async(event: Event) => {
+        event.preventDefault();
+        return;
+    }
+
     return (
         <div class="flex flex-col">
             <h1 class="text-3xl font-medium m-6">Profile Page</h1>
@@ -69,8 +79,27 @@ const ProfilePage = () => {
                     <iframe class="w-[400px] h-[500px] m-6 border" src={resume()}></iframe>
                 </Show>
             </Suspense>
+            <h2 class="text-2xl font-medium mx-6 mt-4">MScAC Details</h2>
             <div class="flex justify-center">
                 <hr class="w-96/100 my-4"/>
+            </div>
+            <form onSubmit={setConcentration}>
+                <div class="flex items-center">
+                    <label class="mx-6 text-xl">Concentration:</label>
+                    <select class="border h-8" name="concentration" id="concentration">
+                        <option value="">--Please choose an option--</option>
+                        <option value="applied-math">Applied Mathematics</option>
+                        <option value="artificial-intelligence">Artificial Intelligence</option>
+                        <option value="artificial-intelligence-healthcare">Artificial Intelligence in Healthcare</option>
+                        <option value="computer-science">Computer Science</option>
+                        <option value="data-science">Data Science</option>
+                        <option value="data-science-biology">Data Science for Biology</option>
+                        <option value="quantum-computing">Quantum Computing</option>
+                    </select>
+                    <button class="border w-12 h-8 ml-8">Save</button>
+                </div>
+            </form>
+            <div class="h-56">
             </div>
         </div>
     )
