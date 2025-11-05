@@ -9,6 +9,52 @@ const ProfilePage = () => {
 
     const [concentrationChanged, setConcentrationChanged] = createSignal(false);
 
+    const fetchConcentration = async () => {
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            return response.text();
+        } else if (response.status === 401) {
+            navigate("/login");
+        } else if (response.status === 404) {
+            return "";
+        }
+    }
+
+    const updateConcentrationChanged = () => {
+        setConcentrationChanged(concentrationInput.value !== concentration());
+    }
+
+    const [concentration] = createResource(fetchConcentration);
+
+    const setConcentration = async(event: Event) => {
+        event.preventDefault();
+
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+            method: "PUT",
+            headers: { "Authorization": `Bearer ${token}` },
+            body: concentrationInput.value
+        });
+
+        if (response.ok) {
+            setConcentrationChanged(false);
+        } else if (response.status === 401) {
+            navigate("/login");
+        }
+    }
+
     const fetchResume = async () => {
         const token = localStorage.getItem("accessToken");
         if (token === null) {
@@ -51,52 +97,6 @@ const ProfilePage = () => {
             const blob = new Blob([resumeInput.files![0]]);
             const url = window.URL.createObjectURL(blob);
             modifyResume.mutate(url);
-        } else if (response.status === 401) {
-            navigate("/login");
-        }
-    }
-
-    const fetchConcentration = async () => {
-        const token = localStorage.getItem("accessToken");
-        if (token === null) {
-            navigate("/login");
-        }
-
-        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
-            headers: { "Authorization": `Bearer ${token}` }
-        });
-
-        if (response.ok) {
-            return response.text();
-        } else if (response.status === 401) {
-            navigate("/login");
-        } else if (response.status === 404) {
-            return "";
-        }
-    }
-
-    const updateConcentrationChanged = () => {
-        setConcentrationChanged(concentrationInput.value !== concentration());
-    }
-
-    const [concentration] = createResource(fetchConcentration);
-
-    const setConcentration = async(event: Event) => {
-        event.preventDefault();
-
-        const token = localStorage.getItem("accessToken");
-        if (token === null) {
-            navigate("/login");
-        }
-
-        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
-            method: "PUT",
-            headers: { "Authorization": `Bearer ${token}` },
-            body: concentrationInput.value
-        });
-
-        if (response.ok) {
-            setConcentrationChanged(false);
         } else if (response.status === 401) {
             navigate("/login");
         }
