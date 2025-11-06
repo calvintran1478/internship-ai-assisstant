@@ -11,9 +11,9 @@ const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 render(
     () => (
         <Router root={(props) => <>{props.children}</>}>
+            <Route path={["/", "/home"]} component={HomePage}/>
             <Route path="/register" component={RegisterPage}/>
             <Route path="/login" component={LoginPage}/>
-            <Route path="/home" component={HomePage}/>
             <Route path="/profile" component={ProfilePage}/>
         </Router>
     ),
