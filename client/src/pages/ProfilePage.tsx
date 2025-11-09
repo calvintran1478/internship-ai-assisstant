@@ -1,5 +1,6 @@
 import { createSignal, createResource, Show, Suspense } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { apiDomain } from "../index";
 
 const ProfilePage = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const ProfilePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+        const response = await fetch(`${apiDomain}/api/v1/users/concentration`, {
             headers: { "Authorization": `Bearer ${token}` }
         });
 
@@ -42,7 +43,7 @@ const ProfilePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/users/concentration", {
+        const response = await fetch(`${apiDomain}/api/v1/users/concentration`, {
             method: "PUT",
             headers: { "Authorization": `Bearer ${token}` },
             body: concentrationInput.value
@@ -61,7 +62,7 @@ const ProfilePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/resume", {
+        const response = await fetch(`${apiDomain}/api/v1/resume`, {
             headers: { "Authorization": `Bearer ${token}` }
         });
 
@@ -87,7 +88,7 @@ const ProfilePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/resume", {
+        const response = await fetch(`${apiDomain}/api/v1/resume`, {
             method: "PUT",
             headers: { "Authorization": `Bearer ${token}` },
             body: resumeInput.files![0]

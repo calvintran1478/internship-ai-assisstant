@@ -1,6 +1,7 @@
 import { createSignal, Show, For, Suspense, createEffect } from 'solid-js';
 import { A } from '@solidjs/router'; 
 import { useNavigate } from "@solidjs/router";
+import { apiDomain } from "../index"; 
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const HomePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/users/name", {
+        const response = await fetch(`${apiDomain}/api/v1/users/name`, {
             headers: { "Authorization": `Bearer ${token}` }
         });
 
@@ -39,7 +40,7 @@ const HomePage = () => {
         document.querySelector("form")!.reset();
         setChat(chat().concat([prompt, ""]));
 
-        const response = await fetch("http://localhost:8000/api/v1/chat", {
+        const response = await fetch(`${apiDomain}/api/v1/chat`, {
             method: "POST",
             body: prompt
         });

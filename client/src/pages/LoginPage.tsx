@@ -1,5 +1,6 @@
 import { createSignal, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
+import { apiDomain } from "../index"; 
 
 const LoginPage = () => {
     let email = "";
@@ -18,7 +19,7 @@ const LoginPage = () => {
         setLoginLoading(true);
         setLoginError("");
 
-        const response = await fetch("http://localhost:8000/api/v1/users/login", {
+        const response = await fetch(`${apiDomain}/api/v1/users/login`, {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
             body: `${email}\n${password}`,
