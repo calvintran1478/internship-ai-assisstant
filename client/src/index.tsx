@@ -12,7 +12,7 @@ const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 
 render(
     () => (
-        <Router root={(props) => <>{props.children}</>}>
+        <Router base="/internship-ai-assisstant" root={(props) => <>{props.children}</>}>
             <Route path={["/", "/home"]} component={HomePage}/>
             <Route path="/register" component={RegisterPage}/>
             <Route path="/login" component={LoginPage}/>
