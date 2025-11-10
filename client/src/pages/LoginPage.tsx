@@ -1,6 +1,7 @@
 import { createSignal, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { apiDomain } from "../index"; 
+import { A } from "@solidjs/router"; 
 
 const LoginPage = () => {
     let email = "";
@@ -37,7 +38,7 @@ const LoginPage = () => {
 
     return (
         <div class="flex justify-center items-center w-screen h-screen">
-            <div class="flex flex-col items-center border-2 p-10" style="width: 40rem; height: 30rem;">
+            <div class="flex flex-col items-center border-2 p-10" style="width: 40rem; height: 32rem;">
                 <h1 class="text-2xl font-bold mb-4">Login</h1>
                 <form onSubmit={loginUser} class="flex flex-col items-center">
                     <div class="flex flex-col m-4 text-xl">
@@ -48,8 +49,12 @@ const LoginPage = () => {
                         <label for="password">Password</label>
                         <input id="password" type="password" class="border-2 w-96 h-10" onChange={(event) => {password = event.target.value}} required/>
                     </div>
-                    <button class="border-2 rounded px-10 py-2 mt-6 text-lg" disabled={loginLoading()}>Login</button>
+                    <button class="border-2 rounded px-10 py-2 mt-4 text-lg" disabled={loginLoading()}>Login</button>
                 </form>
+                <div class="mt-6">
+                    <span class="text-lg">Don't have an account? </span>
+                    <A class="text-lg text-blue-700" href="/register">Sign up</A>
+                </div>
                 <Show when={loginError() !== ""}>
                     <div class="flex justify-center items-center border-2 p-4 m-6 w-96 h-12">
                         <p>{loginError()}</p>
