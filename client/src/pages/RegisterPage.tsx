@@ -1,6 +1,7 @@
 import { createSignal, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { apiDomain } from "../index"; 
+import { A } from "@solidjs/router"; 
 
 const RegisterPage = () => {
     let email = "";
@@ -35,7 +36,7 @@ const RegisterPage = () => {
 
     return (
         <div class="flex justify-center items-center w-screen h-screen">
-            <div class="flex flex-col items-center border-2 p-10" style="width: 40rem; height: 42rem;">
+            <div class="flex flex-col items-center border-2 p-10" style="width: 40rem; height: 45rem;">
                 <h1 class="text-2xl font-bold mb-4">Register</h1>
                 <form onSubmit={registerUser} class="flex flex-col items-center">
                     <div class="flex flex-col m-4 text-xl">
@@ -56,6 +57,10 @@ const RegisterPage = () => {
                     </div>
                     <button class="border-2 rounded p-2 mt-4 text-lg" disabled={registerLoading()}>Create Account</button>
                 </form>
+                <div class="mt-6">
+                    <span class="text-lg">Already have an account? </span>
+                    <A class="text-lg text-blue-700" href="/login">Login</A>
+                </div>
                 <Show when={registerError() !== ""}>
                     <div class="flex justify-center items-center border-2 p-4 m-6 w-96 h-12">
                     <p>{registerError()}</p>
