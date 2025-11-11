@@ -40,8 +40,14 @@ const HomePage = () => {
         document.querySelector("form")!.reset();
         setChat(chat().concat([prompt, ""]));
 
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
         const response = await fetch(`${apiDomain}/api/v1/chat`, {
             method: "POST",
+            headers: { "Authorization": `Bearer ${token}` },
             body: prompt
         });
 
