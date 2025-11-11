@@ -8,6 +8,7 @@ from resources.resume import ResumeResource
 from media_handlers.text_handler import TextHandler
 from middleware.async_pool_middleware import AsyncPoolMiddleware
 from middleware.s3_middleware import S3Middleware
+from middleware.llm_middleware import LLMMiddleware
 
 # Add error logging
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
@@ -17,7 +18,7 @@ load_dotenv()
 
 # Initialize server with default plain/text content type
 cors_middleware = falcon.CORSMiddleware(allow_origins="https://calvintran1478.github.io", allow_credentials="*")
-app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT, middleware=[AsyncPoolMiddleware(), S3Middleware(), cors_middleware])
+app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT, middleware=[AsyncPoolMiddleware(), S3Middleware(), LLMMiddleware(), cors_middleware])
 
 # Set up media handlers
 text_handler = TextHandler()
