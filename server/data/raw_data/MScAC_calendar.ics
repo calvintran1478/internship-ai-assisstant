@@ -1,0 +1,1268 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:icalendar-ruby
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sander Miesen Calendar (Canvas)
+X-WR-CALDESC:Calendar events for the user\, Sander Miesen
+BEGIN:VEVENT
+DTSTAMP:20251006T210900Z
+UID:event-assignment-1619444
+DTSTART;VALUE=DATE;VALUE=DATE:20251006
+CLASS:PUBLIC
+DESCRIPTION:
+SEQUENCE:0
+SUMMARY:Quiz 2 [CSC2108H F LEC0101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_394913
+ &month=10&year=2025#assignment_1619444
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251008T140800Z
+UID:event-calendar-event-1163284
+DTSTART:20251010T220000Z
+DTEND:20251011T030000Z
+CLASS:PUBLIC
+LOCATION:9171/9173/9195/9199
+SEQUENCE:0
+SUMMARY:Student Games Night [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1163284
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T135500Z
+UID:event-calendar-event-1150229
+DTSTART:20251015T163000Z
+DTEND:20251015T180000Z
+CLASS:PUBLIC
+DESCRIPTION:David Duvenaud - The Big Picture of LLM Dangerous Capability Ev
+ als\n\nAssociate Professor\, University of Toronto\n\nWednesday\, October 
+ 15\, 2025 12:30 p.m.\n\nSchwartz Reisman Innovation Campus\, Room W240 108
+  College Street\n\nWe gratefully acknowledge the support of the Webster Fa
+ mily Charitable Giving Foundation for this event.\n\n[Registration Link] (
+ https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.even
+ tbrite.ca%2Fe%2Fsri-seminar-series-david-duvenaud-hybrid-event-tickets-152
+ 0354564429&data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7Cc05eefd58c02
+ 4a7dc53b08ddfb6da199%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C63894317
+ 0499639792%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDA
+ wMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=a
+ 4TPoRCK%2Fk%2FkHHIiLYtqBVscy91er0ENn6eZnndwb5o%3D&reserved=0)\n\n \n\nAbs
+ tract: How can we avoid AI disasters? The plan so far is mostly to check 
+ the extent to which AIs could cause catastrophic harms based on tests in c
+ ontrolled conditions. However\, there are obvious problems with this appro
+ ach\, both technical and due to their limited scope. I'll give an overview
+  of the work my team at Anthropic did to evaluate risks due to models feig
+ ning incompetence\, colluding\, or sabotaging human decision-making. I'll 
+ also discuss the idea of “control” techniques\, which use AIs to monit
+ or and set traps to look for bad behavior in other AIs. Finally\, I'll out
+ line the main problems beyond the scope of these approaches\, in particula
+ r that of robustly aligning our institutions to human interests.
+LOCATION:Schwartz Reisman Innovation Campus\, Room W240 108 College Street
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series - The Big Pic
+ ture of LLM Dangerous Capability Evals [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1150229
+X-ALT-DESC;FMTTYPE=text/html:<p class="x_MsoNormal"><strong data-olk-copy-s
+ ource="MessageBody">David Duvenaud - The Big Picture of LLM Dangerous Capa
+ bility Evals</strong></p>\n<p class="x_MsoNormal">Associate Professor\, Un
+ iversity of Toronto</p>\n<p class="x_MsoNormal">Wednesday\, October 15\, 2
+ 025 12:30 p.m.</p>\n<p class="x_MsoNormal">Schwartz Reisman Innovation Cam
+ pus\, Room W240 108 College Street</p>\n<p class="x_MsoNormal"><i>We grate
+ fully acknowledge the support of the Webster Family Charitable Giving Foun
+ dation for this event.</i></p>\n<p class="x_MsoNormal"><a title="Original 
+ URL: https://www.eventbrite.ca/e/sri-seminar-series-david-duvenaud-hybrid-
+ event-tickets-1520354564429. Click or tap if you trust this link." href="h
+ ttps://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.event
+ brite.ca%2Fe%2Fsri-seminar-series-david-duvenaud-hybrid-event-tickets-1520
+ 354564429&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7Cc05eefd5
+ 8c024a7dc53b08ddfb6da199%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C6389
+ 43170499639792%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjA
+ uMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp
+ \;sdata=a4TPoRCK%2Fk%2FkHHIiLYtqBVscy91er0ENn6eZnndwb5o%3D&amp\;reserved=0
+ " target="_blank" data-auth="NotApplicable" data-linkindex="2">Registratio
+ n Link</a></p>\n<p class="x_MsoNormal" aria-hidden="true">&nbsp\;</p>\n<p 
+ class="x_MsoNormal"><strong>Abstract:</strong>&nbsp\;How can we avoid AI d
+ isasters? The plan so far is mostly to check the extent to which AIs could
+  cause catastrophic harms based on tests in controlled conditions. However
+ \, there are obvious problems with this approach\, both technical and due 
+ to their limited scope. I'll give an overview of the work my team at Anthr
+ opic did to evaluate risks due to models feigning incompetence\, colluding
+ \, or sabotaging human decision-making. I'll also discuss the idea of “c
+ ontrol” techniques\, which use AIs to monitor and set traps to look for 
+ bad behavior in other AIs. Finally\, I'll outline the main problems beyond
+  the scope of these approaches\, in particular that of robustly aligning o
+ ur institutions to human interests.</p>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T112700Z
+UID:event-calendar-event-1150115
+DTSTART:20251015T220000Z
+DTEND:20251016T000000Z
+CLASS:PUBLIC
+DESCRIPTION:Registration link: https://my.alumni.utoronto.ca/s/731/form-bla
+ nk/index.aspx?sid=731&gid=1&pgid=25838&content_id=25265
+LOCATION:TBC
+SEQUENCE:0
+SUMMARY: Eva and Allen Lau Commercialization Catalyst Prize for Computing &
+  Engineering Innovation [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1150115
+X-ALT-DESC;FMTTYPE=text/html:<p>Registration link: <a class="inline_disable
+ d" href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731
+ &amp\;gid=1&amp\;pgid=25838&amp\;content_id=25265" target="_blank">https:/
+ /my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&amp\;gid=1&amp\
+ ;pgid=25838&amp\;content_id=25265</a></p>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T155400Z
+UID:event-calendar-event-1100489
+DTSTART:20251016T200000Z
+DTEND:20251016T210000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScACtalks: Igor Gilitschenkski [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100489
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251008T140900Z
+UID:event-calendar-event-1163285
+DTSTART:20251016T220000Z
+DTEND:20251017T030000Z
+CLASS:PUBLIC
+LOCATION:9014 (Maple Classroom)
+SEQUENCE:0
+SUMMARY:Student Games Night [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1163285
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251001T013700Z
+UID:event-calendar-event-1154986
+DTSTART:20251017T183000Z
+DTEND:20251017T210000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:9014/9016
+SEQUENCE:0
+SUMMARY:Industry Partner Afternoons: AMD [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1154986
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250909T105400Z
+UID:event-calendar-event-1126594
+DTSTART:20251017T210000Z
+DTEND:20251018T000000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Movie Night Fridays [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1126594
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251020T142100Z
+UID:event-calendar-event-1172851
+DTSTART:20251022T163000Z
+DTEND:20251022T173000Z
+CLASS:PUBLIC
+DESCRIPTION:Could granting rights to AI make humans safer?  Please join us
+  online for this week's Schwartz Reisman Institute for Technology and S
+ ociety (SRI) Seminar Series as we welcome University of Houston’s Peter
+  Salib as he explores how extending basic legal rights to AI systems—l
+ ike the ability to contract\, hold property\, and seek remedies—could re
+ duce the risk of catastrophic human–AI conflict and foster cooperative\,
+  peaceful coexistence. \n\n \n\n[SRI Seminar Series: Peter Salib (Univer
+ sity of Houston)] (https://srinstitute.utoronto.ca/events-archive/seminar-
+ 2025-peter-salib)\n\nWednesday October 22\, 2025\, 12:30 - 2:00 PM ET\n\nZ
+ oom: https://utoronto.zoom.us/j/85886852677\n\n \n\nTalk Title: “AI ri
+ ghts for human safety” \n\n \n\nAbstract: \n\nAI companies are racing
+  to create artificial general intelligence\, or “AGI.” If they succeed
+ \, the result will be human-level AI systems that can independently pursue
+  high-level goals by formulating and executing long-term plans in the real
+  world. By default\, such systems will be “misaligned”—pursuing goal
+ s that humans do not desire. This goal mismatch will put humans and AGIs i
+ nto strategic competition with one another. Thus\, leading AI researchers 
+ agree that\, as with competition between humans with conflicting goals\, h
+ uman–AI strategic conflict could lead to catastrophic violence.  \n\nE
+ xisting law is not merely unequipped to mitigate this risk\; it will activ
+ ely make things worse. This Article is the first to systematically investi
+ gate how law affects the risk of catastrophic human–AI conflict. It begi
+ ns by arguing\, using formal game-theoretic models\, that under today’s 
+ legal regime\, humans and AIs will likely be trapped in a prisoner’s dil
+ emma. Both parties’ dominant strategy will be to permanently disempower 
+ or destroy the other\, even though the costs of such conflict would be hig
+ h.  \n\nThis talk contends that one surprising legal change could help t
+ o reduce catastrophic risk: AI rights. Not just any rights will do. To pro
+ mote human safety\, AIs should be given the basic private law rights alrea
+ dy enjoyed by other non-human agents\, like corporations. AIs should be em
+ powered to make contracts\, hold property\, and bring tort claims. Grantin
+ g these rights would enable humans and AIs to engage in iterated\, small-s
+ cale\, mutually-beneficial transactions. This\, we show\, changes humans
+ ’ and AIs’ optimal game-theoretic strategies\, encouraging a peaceful 
+ strategic equilibrium. The reasons are familiar from human affairs. In the
+  long run\, cooperative trade generates immense value\, while violence des
+ troys it.  \n\nBasic private law rights are not a panacea. The talk will
+  identify many ways in which catastrophic human–AI conflict may still ar
+ ise. It thus explores whether law could further reduce risk by imposing a 
+ range of duties directly on AGIs. But basic private law rights are a neces
+ sary prerequisite for all such further regulations. In this sense\, the AI
+  rights investigated here form the foundation for a Law of AGI\, broadly c
+ onstrued. \n\n \n\n[Learn more about this session.] (https://srinstitute
+ .utoronto.ca/events-archive/seminar-2025-peter-salib)\n\n \n\nAbout the s
+ peaker:\n\n[Peter N. Salib] (https://can01.safelinks.protection.outlook.co
+ m/?url=https%3A%2F%2Fwww.law.uh.edu%2Ffaculty%2Fmain.asp%3FPID%3D6428&data
+ =05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C423eb044deb1481a673908de0fd
+ 08357%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638965585493807672%7CUn
+ known%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW
+ 4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=tfPj1s8MYdoTtyxd
+ sHMAR5X0ttFbU4jnSpqQ4YtrIG0%3D&reserved=0) is an assistant professor of l
+ aw at the University of Houston Law Center and associated faculty in Publi
+ c Affairs. He also serves as a law and policy advisor to the [Center for 
+ AI Safety] (https://can01.safelinks.protection.outlook.com/?url=https%3A%2
+ F%2Fwww.safe.ai%2F&data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C423e
+ b044deb1481a673908de0fd08357%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C
+ 638965585493827043%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiI
+ wLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C
+ &sdata=vQO4LWA9VdFIHAVofwLzuXgI3lhJ%2B6XlJ5nEmBKhTXc%3D&reserved=0) in Sa
+ n Francisco and is co-director of the [Center for Law & AI Risk] (https:/
+ /can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fclair-ai.org%2F
+ &data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C423eb044deb1481a673908
+ de0fd08357%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638965585493840253
+ %7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiO
+ iJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=KW3HAgVd7EE
+ IuMilvK9HXlskHMIKVwMqotJkh427wbo%3D&reserved=0). Salib is an expert in the
+  law of artificial intelligence. His research applies substantive constitu
+ tional doctrine and economic analysis to questions of AI governance. He ha
+ s previously written about how machine learning techniques can be used to 
+ solve intractable-seeming problems in constitutional policy. Salib’s cur
+ rent research focuses on how law can help mitigate catastrophic risks from
+  increasingly capable AI. \n\n \n\n \n\n \n\n \n\nAbout the SRI Semin
+ ar Series:\n\nThe SRI Seminar Series showcases leading and emerging schola
+ rs from a diversity of disciplines (CS\, Law\, Psychology\, Anthropology\,
+  Economics\, ...) discussing timely topics at the intersection of technolo
+ gy and society.  With few exceptions\, seminars occur weekly\, online\, o
+ n Wednesdays at 12:30 PM ET. The format comprises a 50 minute talk\, follo
+ wed by a Q&A with the audience. Seminars are typically recorded and subseq
+ uently [posted on the SRI website] (https://srinstitute.utoronto.ca/video
+ s).  \n\n \n\nQuestions?\n\nContact us at [sri.research@utoronto.ca] (
+ mailto:sri.research@utoronto.ca).\n\n \n\nSchwartz Reisman Institute for 
+ Technology and Society\n\nhttps://srinstitute.utoronto.ca/
+LOCATION:https://utoronto.zoom.us/j/85886852677
+SEQUENCE:0
+SUMMARY:SRI Seminar Series (Virtual): Peter Salib (University of Houston) [
+ CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1172851
+X-ALT-DESC;FMTTYPE=text/html:<p><span style="font-size: small\;"><span data
+ -olk-copy-source="MessageBody">Could granting rights to AI make humans saf
+ er?&nbsp\; Please join us&nbsp\;<strong>online</strong>&nbsp\;for this wee
+ k's Schwartz Reisman Institute for&nbsp\;Technology and Society (SRI) Semi
+ nar Series as we welcome University of Houston’s&nbsp\;<strong>Peter</st
+ rong>&nbsp\;<strong>Salib</strong>&nbsp\;as he explores how extending basi
+ c legal rights to AI systems—like the ability to contract\, hold propert
+ y\, and seek remedies—could reduce the risk of catastrophic human–AI c
+ onflict and foster cooperative\, peaceful coexistence.&nbsp\;</span></span
+ ></p>\n<p><span style="font-size: small\;"><span>&nbsp\;</span></span></p>
+ \n<p><span style="font-size: small\;"><span><strong><a id="x_m_16661898060
+ 96532351OWA5662e039-bc26-85e6-9cd9-bf1242c70e97" title="https://srinstitut
+ e.utoronto.ca/events-archive/seminar-2025-peter-salib" href="https://srins
+ titute.utoronto.ca/events-archive/seminar-2025-peter-salib" target="_blank
+ " data-auth="NotApplicable" data-linkindex="0">SRI Seminar Series: Peter S
+ alib (University of Houston)</a></strong></span></span></p>\n<p><span styl
+ e="font-size: small\;"><span><strong>Wednesday October 22\, 2025\, 12:30 -
+  2:00 PM ET</strong></span></span></p>\n<p><span style="font-size: small\;
+ "><span><strong>Zoom:</strong>&nbsp\;</span><span><u><a id="x_m_1666189806
+ 096532351OWA3b80e920-6d20-e88a-424b-f5727514fcfc" title="https://utoronto.
+ zoom.us/j/85886852677" href="https://utoronto.zoom.us/j/85886852677" targe
+ t="_blank" data-auth="NotApplicable" data-linkindex="1">https://utoronto.z
+ oom.us/j/85886852677</a></u></span></span></p>\n<div><span style="font-siz
+ e: small\;"><strong>&nbsp\;</strong></span></div>\n<p><span style="font-si
+ ze: small\;"><span><strong>Talk Title: “AI rights for human safety”&nb
+ sp\;</strong></span></span></p>\n<p><span style="font-size: small\;"><span
+ ><strong>&nbsp\;</strong></span></span></p>\n<p><span style="font-size: sm
+ all\;"><span><strong>Abstract:&nbsp\;</strong></span></span></p>\n<div><sp
+ an style="font-size: small\;">AI companies are racing to create artificial
+  general intelligence\, or “AGI.” If they succeed\, the result will be
+  human-level AI systems that can independently pursue high-level goals by 
+ formulating and executing long-term plans in the real world. By default\, 
+ such systems will be “misaligned”—pursuing goals that humans do not 
+ desire. This goal mismatch will put humans and AGIs into strategic competi
+ tion with one another. Thus\, leading AI researchers agree that\, as with 
+ competition between humans with conflicting goals\, human–AI strategic c
+ onflict could lead to catastrophic violence.&nbsp\;&nbsp\;</span></div>\n<
+ div><span style="font-size: small\;">Existing law is not merely unequipped
+  to mitigate this risk\; it will actively make things worse. This Article 
+ is the first to systematically investigate how law affects the risk of cat
+ astrophic human–AI conflict. It begins by arguing\, using formal game-th
+ eoretic models\, that under today’s legal regime\, humans and AIs will l
+ ikely be trapped in a prisoner’s dilemma. Both parties’ dominant strat
+ egy will be to permanently disempower or destroy the other\, even though t
+ he costs of such conflict would be high.&nbsp\;&nbsp\;</span></div>\n<div>
+ <span style="font-size: small\;">This talk contends that one surprising le
+ gal change could help to reduce catastrophic risk: AI rights. Not just any
+  rights will do. To promote human safety\, AIs should be given the basic p
+ rivate law rights already enjoyed by other non-human agents\, like corpora
+ tions. AIs should be empowered to make contracts\, hold property\, and bri
+ ng tort claims. Granting these rights would enable humans and AIs to engag
+ e in iterated\, small-scale\, mutually-beneficial transactions. This\, we 
+ show\, changes humans’ and AIs’ optimal game-theoretic strategies\, en
+ couraging a peaceful strategic equilibrium. The reasons are familiar from 
+ human affairs. In the long run\, cooperative trade generates immense value
+ \, while violence destroys it.&nbsp\;&nbsp\;</span></div>\n<div><span styl
+ e="font-size: small\;">Basic private law rights are not a panacea. The tal
+ k will identify many ways in which catastrophic human–AI conflict may st
+ ill arise. It thus explores whether law could further reduce risk by impos
+ ing a range of duties directly on AGIs. But basic private law rights are a
+  necessary prerequisite for all such further regulations. In this sense\, 
+ the AI rights investigated here form the foundation for a Law of AGI\, bro
+ adly construed.&nbsp\;</span></div>\n<p><span style="font-size: small\;"><
+ span><strong>&nbsp\;</strong></span></span></p>\n<p><span style="font-size
+ : small\;"><span><strong><a id="x_m_1666189806096532351OWA8e6ce9e8-6c4a-4d
+ 9d-5666-24419464730d" title="https://srinstitute.utoronto.ca/events-archiv
+ e/seminar-2025-peter-salib" href="https://srinstitute.utoronto.ca/events-a
+ rchive/seminar-2025-peter-salib" target="_blank" data-auth="NotApplicable"
+  data-linkindex="2">Learn more about this session.</a></strong></span></sp
+ an></p>\n<div><span style="font-size: small\;">&nbsp\;</span></div>\n<p><s
+ pan style="font-size: small\;"><span><strong>About the speaker:</strong></
+ span></span></p>\n<p><span style="font-size: small\;"><span><strong><u><a 
+ id="x_m_1666189806096532351OWAf6954505-6d96-d872-f291-16f49225c435" title=
+ "Original URL: https://www.law.uh.edu/faculty/main.asp?PID=6428. Click or 
+ tap if you trust this link." href="https://can01.safelinks.protection.outl
+ ook.com/?url=https%3A%2F%2Fwww.law.uh.edu%2Ffaculty%2Fmain.asp%3FPID%3D642
+ 8&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C423eb044deb1481a
+ 673908de0fd08357%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638965585493
+ 807672%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCI
+ sIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp\;sdata=
+ tfPj1s8MYdoTtyxdsHMAR5X0ttFbU4jnSpqQ4YtrIG0%3D&amp\;reserved=0" target="_b
+ lank" data-auth="NotApplicable" data-linkindex="3">Peter N. Salib</a></u><
+ /strong></span><span>&nbsp\;is an assistant professor of law at the Univer
+ sity of Houston Law Center and associated faculty in Public Affairs. He al
+ so serves as a law and policy advisor to the&nbsp\;</span><span><u><a id="
+ x_m_1666189806096532351OWA8ff0def0-caa8-388d-ee7c-851e095e7cdf" title="Ori
+ ginal URL: https://www.safe.ai/. Click or tap if you trust this link." hre
+ f="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.s
+ afe.ai%2F&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C423eb044
+ deb1481a673908de0fd08357%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C6389
+ 65585493827043%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjA
+ uMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp
+ \;sdata=vQO4LWA9VdFIHAVofwLzuXgI3lhJ%2B6XlJ5nEmBKhTXc%3D&amp\;reserved=0" 
+ target="_blank" data-auth="NotApplicable" data-linkindex="4">Center for AI
+  Safety</a></u></span><span>&nbsp\;in San Francisco and is co-director of 
+ the&nbsp\;</span><span><u><a id="x_m_1666189806096532351OWA53cbd57f-63c5-4
+ 7ad-84c8-a9956df3bceb" title="Original URL: https://clair-ai.org/. Click o
+ r tap if you trust this link." href="https://can01.safelinks.protection.ou
+ tlook.com/?url=https%3A%2F%2Fclair-ai.org%2F&amp\;data=05%7C02%7Cclaire.mo
+ sses%40mscac.utoronto.ca%7C423eb044deb1481a673908de0fd08357%7C78aac2262f03
+ 4b4d9037b46d56c55210%7C0%7C0%7C638965585493840253%7CUnknown%7CTWFpbGZsb3d8
+ eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbC
+ IsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp\;sdata=KW3HAgVd7EEIuMilvK9HXlskHMIKVwM
+ qotJkh427wbo%3D&amp\;reserved=0" target="_blank" data-auth="NotApplicable"
+  data-linkindex="5">Center for Law &amp\; AI Risk</a></u></span><span>. Sa
+ lib is an expert in the law of artificial intelligence. His research appli
+ es substantive constitutional doctrine and economic analysis to questions 
+ of AI governance. He has previously written about how machine learning tec
+ hniques can be used to solve intractable-seeming problems in constitutiona
+ l policy. Salib’s current research focuses on how law can help mitigate 
+ catastrophic risks from increasingly capable AI.&nbsp\;</span></span></p>\
+ n<p><span style="font-size: small\;"><span>&nbsp\;</span></span></p>\n<p>&
+ nbsp\;</p>\n<p>&nbsp\;</p>\n<p>&nbsp\;</p>\n<p><span style="color: #000000
+ \; font-family: arial\, sans-serif\; font-size: small\;"><strong>About the
+  SRI Seminar Series:</strong></span></p>\n<div><span style="color: #000000
+ \; font-family: arial\, sans-serif\; font-size: small\;">The SRI Seminar S
+ eries showcases leading and emerging scholars from a diversity of discipli
+ nes (CS\, Law\, Psychology\, Anthropology\, Economics\, ...) discussing ti
+ mely topics at the intersection of technology and society.&nbsp\; With few
+  exceptions\, seminars occur weekly\, online\, on Wednesdays at 12:30 PM E
+ T. The format comprises a 50 minute talk\, followed by a Q&amp\;A with the
+  audience. Seminars are typically recorded and subsequently&nbsp\;<a title
+ ="https://srinstitute.utoronto.ca/videos" href="https://srinstitute.utoron
+ to.ca/videos" target="_blank" data-auth="NotApplicable" data-linkindex="6"
+ >posted on the SRI website</a>.&nbsp\;&nbsp\;</span></div>\n<p>&nbsp\;</p>
+ \n<p><span style="font-size: small\;"><span><strong><u>Questions?</u></str
+ ong></span></span></p>\n<p><span style="font-size: small\;"><span>Contact 
+ us at&nbsp\;</span><span><u><a id="x_m_1666189806096532351OWA45805b5a-1a4f
+ -fd87-94ad-7c3eaf24cfb0" title="mailto:sri.research@utoronto.ca" href="mai
+ lto:sri.research@utoronto.ca" data-linkindex="7">sri.research@utoronto.ca<
+ /a></u></span><span>.</span></span></p>\n<p><span style="font-size: small\
+ ;"><span>&nbsp\;</span></span></p>\n<p><span style="font-size: small\;"><s
+ pan><strong>Schwartz Reisman Institute for Technology and Society</strong>
+ </span></span></p>\n<p><span style="font-size: small\;"><span><u><a id="x_
+ m_1666189806096532351OWA0ec21825-e76d-805d-77a6-18e11a5e36e0" title="https
+ ://srinstitute.utoronto.ca/" href="https://srinstitute.utoronto.ca/" targe
+ t="_blank" data-auth="NotApplicable" data-linkindex="8">https://srinstitut
+ e.utoronto.ca/</a></u></span></span></p>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251001T013700Z
+UID:event-calendar-event-1154987
+DTSTART:20251024T183000Z
+DTEND:20251024T210000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Industry Partner Afternoon: Vanguard Investments Canada [CSC2703H Y
+  LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1154987
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251003T102700Z
+UID:event-calendar-event-1158161
+DTSTART:20251024T220000Z
+DTEND:20251025T010000Z
+CLASS:PUBLIC
+DESCRIPTION:We are very excited to announce that MScAC is collaborating wit
+ h Boson AI to host the "Higgs Audio Hackathon" from October 24 - October 2
+ 6 at 700 University Avenue!\n\nTo sign up: [https://forms.gle/Jose5X3xyZc
+ YDZTi7] (https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2
+ Fforms.gle%2FJose5X3xyZcYDZTi7&data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&reserved
+ =0)\n\n \n\nThis is a great opportunity to push the limits of Boson’s n
+ ewest audio model — [Higgs Audio V2] (https://can01.safelinks.protectio
+ n.outlook.com/?url=https%3A%2F%2Fwww.boson.ai%2Fblog%2Fhiggs-audio-v2&data
+ =05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C080d7fb5b4b54239e25e08de01f
+ 2c23b%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638950339316706102%7CUn
+ known%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW
+ 4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=ZKYK9Lfwp7PEsf3O
+ 1400VdZm%2FE0GlHtseiZY5XMePS8%3D&reserved=0)\, with the aim being to buil
+ d fast\, break things\, and create novel applications using Boson's founda
+ tion model as your launchpad. You'll also have the opportunity to connect 
+ more with the Boson team\, who will be using part of this as their MScAC I
+ ndustry Night!\n\nAdditional reasons why you should join: \n\n* TONS of p
+ rizes including NVIDIA hardware\, Boson merch and swag\, compute credits\,
+  project publicity and more.\n\n* Free food for the entire event including
+  a pub night on the Sunday night.\n\n*\n\nBoson will be scouting for tale
+ nt!\n\n*\n\nThis is the first hackathon MScAC has been involved in hosting
+ \, so we hope to make it a memorable event with all our students.
+LOCATION:9014/9016
+SEQUENCE:0
+SUMMARY:Boson AI + MScAC Higgs Audio Hackathon [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1158161
+X-ALT-DESC;FMTTYPE=text/html:<div class="x_elementToProof" data-olk-copy-so
+ urce="MessageBody">We are very excited to announce that MScAC is collabora
+ ting with Boson AI to host the "Higgs Audio Hackathon" from October 24 - O
+ ctober 26 at 700 University Avenue!</div>\n<div class="x_elementToProof">T
+ o sign up:<span>&nbsp\;</span><span><a id="OWA67cf63d6-83c6-015d-f5f4-c5f3
+ 18a69302" class="x_x_OWAAutoLink x_x_elementToProof" title="Original URL: 
+ https://forms.gle/Jose5X3xyZcYDZTi7. Click or tap if you trust this link."
+  href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Ff
+ orms.gle%2FJose5X3xyZcYDZTi7&amp\;data=05%7C02%7Cclaire.mosses%40mscac.uto
+ ronto.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5
+ 5210%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGki
+ OnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%
+ 3D%7C0%7C%7C%7C&amp\;sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&
+ amp\;reserved=0" target="_blank" data-linkindex="0" data-auth="NotApplicab
+ le">https://forms.gle/Jose5X3xyZcYDZTi7</a></span></div>\n<div class="x_el
+ ementToProof"><span>&nbsp\;</span></div>\n<div class="x_elementToProof"><s
+ pan>This is a great opportunity to push the limits of Boson’s newest aud
+ io model —&nbsp\;</span><span><strong><a id="OWAa79d8d76-7807-383e-ce47-
+ a12358e36e75" class="x_x_OWAAutoLink" title="Original URL: https://www.bos
+ on.ai/blog/higgs-audio-v2. Click or tap if you trust this link." href="htt
+ ps://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.boson.a
+ i%2Fblog%2Fhiggs-audio-v2&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316706102%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&amp\;sdata=ZKYK9Lfwp7PEsf3O1400VdZm%2FE0GlHtseiZY5XMePS8%3D&a
+ mp\;reserved=0" target="_blank" data-linkindex="1" data-auth="NotApplicabl
+ e">Higgs Audio V2</a>\,&nbsp\;</strong></span><span>with the aim being to 
+ build fast\, break things\, and create novel applications using Boson's fo
+ undation model as your launchpad. You'll also have the opportunity to conn
+ ect more with the Boson team\, who will be using part of this as their MSc
+ AC Industry Night!</span></div>\n<div class="x_elementToProof"><strong>Add
+ itional reasons why you should join:&nbsp\;</strong></div>\n<ul>\n<li>TONS
+  of prizes including NVIDIA hardware\, Boson merch and swag\, compute cred
+ its\, project publicity and more.</li>\n<li>Free food for the entire event
+  including a pub night on the Sunday night.</li>\n<li>\n<div role="present
+ ation">Boson&nbsp\;will be scouting for talent!</div>\n</li>\n<li>\n<div r
+ ole="presentation">This is the first hackathon MScAC has been involved in 
+ hosting\, so we hope to make it a memorable event with all our students.</
+ div>\n</li>\n</ul>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251003T102700Z
+UID:event-calendar-event-1158605
+DTSTART:20251025T130000Z
+DTEND:20251026T035900Z
+CLASS:PUBLIC
+DESCRIPTION:We are very excited to announce that MScAC is collaborating wit
+ h Boson AI to host the "Higgs Audio Hackathon" from October 24 - October 2
+ 6 at 700 University Avenue!\n\nTo sign up: [https://forms.gle/Jose5X3xyZc
+ YDZTi7] (https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2
+ Fforms.gle%2FJose5X3xyZcYDZTi7&data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&reserved
+ =0)\n\n \n\nThis is a great opportunity to push the limits of Boson’s n
+ ewest audio model — [Higgs Audio V2] (https://can01.safelinks.protectio
+ n.outlook.com/?url=https%3A%2F%2Fwww.boson.ai%2Fblog%2Fhiggs-audio-v2&data
+ =05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C080d7fb5b4b54239e25e08de01f
+ 2c23b%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638950339316706102%7CUn
+ known%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW
+ 4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=ZKYK9Lfwp7PEsf3O
+ 1400VdZm%2FE0GlHtseiZY5XMePS8%3D&reserved=0)\, with the aim being to buil
+ d fast\, break things\, and create novel applications using Boson's founda
+ tion model as your launchpad. You'll also have the opportunity to connect 
+ more with the Boson team\, who will be using part of this as their MScAC I
+ ndustry Night!\n\nAdditional reasons why you should join: \n\n* TONS of p
+ rizes including NVIDIA hardware\, Boson merch and swag\, compute credits\,
+  project publicity and more.\n\n* Free food for the entire event including
+  a pub night on the Sunday night.\n\n*\n\nBoson will be scouting for tale
+ nt!\n\n*\n\nThis is the first hackathon MScAC has been involved in hosting
+ \, so we hope to make it a memorable event with all our students.
+LOCATION:9014/9016
+SEQUENCE:0
+SUMMARY:Boson AI + MScAC Higgs Audio Hackathon [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1158605
+X-ALT-DESC;FMTTYPE=text/html:<div class="x_elementToProof" data-olk-copy-so
+ urce="MessageBody">We are very excited to announce that MScAC is collabora
+ ting with Boson AI to host the "Higgs Audio Hackathon" from October 24 - O
+ ctober 26 at 700 University Avenue!</div>\n<div class="x_elementToProof">T
+ o sign up:<span>&nbsp\;</span><span><a id="OWA67cf63d6-83c6-015d-f5f4-c5f3
+ 18a69302" class="x_x_OWAAutoLink x_x_elementToProof" title="Original URL: 
+ https://forms.gle/Jose5X3xyZcYDZTi7. Click or tap if you trust this link."
+  href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Ff
+ orms.gle%2FJose5X3xyZcYDZTi7&amp\;data=05%7C02%7Cclaire.mosses%40mscac.uto
+ ronto.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5
+ 5210%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGki
+ OnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%
+ 3D%7C0%7C%7C%7C&amp\;sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&
+ amp\;reserved=0" target="_blank" data-linkindex="0" data-auth="NotApplicab
+ le">https://forms.gle/Jose5X3xyZcYDZTi7</a></span></div>\n<div class="x_el
+ ementToProof"><span>&nbsp\;</span></div>\n<div class="x_elementToProof"><s
+ pan>This is a great opportunity to push the limits of Boson’s newest aud
+ io model —&nbsp\;</span><span><strong><a id="OWAa79d8d76-7807-383e-ce47-
+ a12358e36e75" class="x_x_OWAAutoLink" title="Original URL: https://www.bos
+ on.ai/blog/higgs-audio-v2. Click or tap if you trust this link." href="htt
+ ps://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.boson.a
+ i%2Fblog%2Fhiggs-audio-v2&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316706102%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&amp\;sdata=ZKYK9Lfwp7PEsf3O1400VdZm%2FE0GlHtseiZY5XMePS8%3D&a
+ mp\;reserved=0" target="_blank" data-linkindex="1" data-auth="NotApplicabl
+ e">Higgs Audio V2</a>\,&nbsp\;</strong></span><span>with the aim being to 
+ build fast\, break things\, and create novel applications using Boson's fo
+ undation model as your launchpad. You'll also have the opportunity to conn
+ ect more with the Boson team\, who will be using part of this as their MSc
+ AC Industry Night!</span></div>\n<div class="x_elementToProof"><strong>Add
+ itional reasons why you should join:&nbsp\;</strong></div>\n<ul>\n<li>TONS
+  of prizes including NVIDIA hardware\, Boson merch and swag\, compute cred
+ its\, project publicity and more.</li>\n<li>Free food for the entire event
+  including a pub night on the Sunday night.</li>\n<li>\n<div role="present
+ ation">Boson&nbsp\;will be scouting for talent!</div>\n</li>\n<li>\n<div r
+ ole="presentation">This is the first hackathon MScAC has been involved in 
+ hosting\, so we hope to make it a memorable event with all our students.</
+ div>\n</li>\n</ul>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251003T102700Z
+UID:event-calendar-event-1158606
+DTSTART:20251026T040000Z
+DTEND:20251027T010000Z
+CLASS:PUBLIC
+DESCRIPTION:We are very excited to announce that MScAC is collaborating wit
+ h Boson AI to host the "Higgs Audio Hackathon" from October 24 - October 2
+ 6 at 700 University Avenue!\n\nTo sign up: [https://forms.gle/Jose5X3xyZc
+ YDZTi7] (https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2
+ Fforms.gle%2FJose5X3xyZcYDZTi7&data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&reserved
+ =0)\n\n \n\nThis is a great opportunity to push the limits of Boson’s n
+ ewest audio model — [Higgs Audio V2] (https://can01.safelinks.protectio
+ n.outlook.com/?url=https%3A%2F%2Fwww.boson.ai%2Fblog%2Fhiggs-audio-v2&data
+ =05%7C02%7Cclaire.mosses%40mscac.utoronto.ca%7C080d7fb5b4b54239e25e08de01f
+ 2c23b%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638950339316706102%7CUn
+ known%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW
+ 4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=ZKYK9Lfwp7PEsf3O
+ 1400VdZm%2FE0GlHtseiZY5XMePS8%3D&reserved=0)\, with the aim being to buil
+ d fast\, break things\, and create novel applications using Boson's founda
+ tion model as your launchpad. You'll also have the opportunity to connect 
+ more with the Boson team\, who will be using part of this as their MScAC I
+ ndustry Night!\n\nAdditional reasons why you should join: \n\n* TONS of p
+ rizes including NVIDIA hardware\, Boson merch and swag\, compute credits\,
+  project publicity and more.\n\n* Free food for the entire event including
+  a pub night on the Sunday night.\n\n*\n\nBoson will be scouting for tale
+ nt!\n\n*\n\nThis is the first hackathon MScAC has been involved in hosting
+ \, so we hope to make it a memorable event with all our students.
+LOCATION:9014/9016
+SEQUENCE:0
+SUMMARY:Boson AI + MScAC Higgs Audio Hackathon [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1158606
+X-ALT-DESC;FMTTYPE=text/html:<div class="x_elementToProof" data-olk-copy-so
+ urce="MessageBody">We are very excited to announce that MScAC is collabora
+ ting with Boson AI to host the "Higgs Audio Hackathon" from October 24 - O
+ ctober 26 at 700 University Avenue!</div>\n<div class="x_elementToProof">T
+ o sign up:<span>&nbsp\;</span><span><a id="OWA67cf63d6-83c6-015d-f5f4-c5f3
+ 18a69302" class="x_x_OWAAutoLink x_x_elementToProof" title="Original URL: 
+ https://forms.gle/Jose5X3xyZcYDZTi7. Click or tap if you trust this link."
+  href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Ff
+ orms.gle%2FJose5X3xyZcYDZTi7&amp\;data=05%7C02%7Cclaire.mosses%40mscac.uto
+ ronto.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5
+ 5210%7C0%7C0%7C638950339316674481%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGki
+ OnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%
+ 3D%7C0%7C%7C%7C&amp\;sdata=2QDQIl7AqdceBMuIx1dUjdUwpLUriWou27xAybT2gZI%3D&
+ amp\;reserved=0" target="_blank" data-linkindex="0" data-auth="NotApplicab
+ le">https://forms.gle/Jose5X3xyZcYDZTi7</a></span></div>\n<div class="x_el
+ ementToProof"><span>&nbsp\;</span></div>\n<div class="x_elementToProof"><s
+ pan>This is a great opportunity to push the limits of Boson’s newest aud
+ io model —&nbsp\;</span><span><strong><a id="OWAa79d8d76-7807-383e-ce47-
+ a12358e36e75" class="x_x_OWAAutoLink" title="Original URL: https://www.bos
+ on.ai/blog/higgs-audio-v2. Click or tap if you trust this link." href="htt
+ ps://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.boson.a
+ i%2Fblog%2Fhiggs-audio-v2&amp\;data=05%7C02%7Cclaire.mosses%40mscac.utoron
+ to.ca%7C080d7fb5b4b54239e25e08de01f2c23b%7C78aac2262f034b4d9037b46d56c5521
+ 0%7C0%7C0%7C638950339316706102%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR
+ ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%
+ 7C0%7C%7C%7C&amp\;sdata=ZKYK9Lfwp7PEsf3O1400VdZm%2FE0GlHtseiZY5XMePS8%3D&a
+ mp\;reserved=0" target="_blank" data-linkindex="1" data-auth="NotApplicabl
+ e">Higgs Audio V2</a>\,&nbsp\;</strong></span><span>with the aim being to 
+ build fast\, break things\, and create novel applications using Boson's fo
+ undation model as your launchpad. You'll also have the opportunity to conn
+ ect more with the Boson team\, who will be using part of this as their MSc
+ AC Industry Night!</span></div>\n<div class="x_elementToProof"><strong>Add
+ itional reasons why you should join:&nbsp\;</strong></div>\n<ul>\n<li>TONS
+  of prizes including NVIDIA hardware\, Boson merch and swag\, compute cred
+ its\, project publicity and more.</li>\n<li>Free food for the entire event
+  including a pub night on the Sunday night.</li>\n<li>\n<div role="present
+ ation">Boson&nbsp\;will be scouting for talent!</div>\n</li>\n<li>\n<div r
+ ole="presentation">This is the first hackathon MScAC has been involved in 
+ hosting\, so we hope to make it a memorable event with all our students.</
+ div>\n</li>\n</ul>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T155600Z
+UID:event-calendar-event-1100492
+DTSTART:20251027T040000Z
+DTEND:20251028T034500Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall Courses Drop Deadline [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100492
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160200Z
+UID:event-calendar-event-1100511
+DTSTART;VALUE=DATE;VALUE=DATE:20251027
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100511
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160200Z
+UID:event-calendar-event-1100512
+DTSTART;VALUE=DATE;VALUE=DATE:20251028
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100512
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T135700Z
+UID:event-calendar-event-1150240
+DTSTART:20251028T150000Z
+DTEND:20251028T160000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:BA3200\, Bahen Centre for Information Technology
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series: Austin Roor
+ da - Oz Vision: A New Principle for Visual Display [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1150240
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160200Z
+UID:event-calendar-event-1100513
+DTSTART;VALUE=DATE;VALUE=DATE:20251029
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100513
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251020T192300Z
+UID:event-assignment-1617826
+DTSTART;VALUE=DATE;VALUE=DATE:20251029
+CLASS:PUBLIC
+DESCRIPTION:Hello class\,\n\nHere is your assignment: ([this link)! ] (http
+ s://q.utoronto.ca/courses/394913/files/39594718?wrap=1)Office hours for th
+ e assignment will be scheduled on: Oct 10th\, 3-5 pm in BA 3289\, and Oct 
+ 17th\, 3-5pm in BA 5287. You can also post your questions on Ed\, but plea
+ se plan ahead and do not try to do everything last minute. Please avoid se
+ nding me emails to ask questions about the assignment\, most likely you wi
+ ll not get a reply. \n\nAssignment Due: Oct 22nd\, 11:59 pm.\n\nHave fun 
+ :)\n\nSissi
+SEQUENCE:0
+SUMMARY:Assignment 1 [CSC2108H F LEC0101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_394913
+ &month=10&year=2025#assignment_1617826
+X-ALT-DESC;FMTTYPE=text/html:<p>Hello class\,</p>\n<p>Here is your assignme
+ nt: (<a class="instructure_file_link inline_disabled" title="CSC2108_A1_Fa
+ ll_2025.zip" href="https://q.utoronto.ca/courses/394913/files/39594718?wra
+ p=1" target="_blank" data-canvas-previewable="false" data-api-endpoint="ht
+ tps://q.utoronto.ca/api/v1/courses/394913/files/39594718" data-api-returnt
+ ype="File">this link)! </a>Office hours for the assignment will be schedul
+ ed on: Oct 10th\, 3-5 pm in BA 3289\, and Oct 17th\, 3-5pm in BA 5287. You
+  can also post your questions on Ed\, but please plan ahead and do not try
+  to do everything last minute. Please avoid sending me emails to ask quest
+ ions about the assignment\, most likely you will not get a reply.&nbsp\;</
+ p>\n<p><strong>Assignment Due: Oct 22nd\, 11:59 pm.</strong></p>\n<p>Have 
+ fun :)</p>\n<p>Sissi</p>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160200Z
+UID:event-calendar-event-1100514
+DTSTART;VALUE=DATE;VALUE=DATE:20251030
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100514
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160200Z
+UID:event-calendar-event-1100515
+DTSTART;VALUE=DATE;VALUE=DATE:20251031
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=10&year=2025#calendar_event_1100515
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251104T164200Z
+UID:event-assignment-1631117
+DTSTART;VALUE=DATE;VALUE=DATE:20251105
+CLASS:PUBLIC
+DESCRIPTION:please submit 1 pdf per group
+SEQUENCE:0
+SUMMARY:Project Proposal [CSC2108H F LEC0101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_394913
+ &month=11&year=2025#assignment_1631117
+X-ALT-DESC;FMTTYPE=text/html:<p>please submit 1 pdf per group</p>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T162000Z
+UID:event-calendar-event-1100655
+DTSTART:20251111T160000Z
+DTEND:20251111T170000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScACtalks: Yonatahn Kahn [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1100655
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T155600Z
+UID:event-calendar-event-1100491
+DTSTART:20251113T200000Z
+DTEND:20251114T000000Z
+CLASS:PUBLIC
+LOCATION:Metro Toronto Convention Centre
+SEQUENCE:0
+SUMMARY:ARIA [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1100491
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20251001T013800Z
+UID:event-calendar-event-1154988
+DTSTART:20251114T193000Z
+DTEND:20251114T220000Z
+CLASS:PUBLIC
+LOCATION:9014/9016
+SEQUENCE:0
+SUMMARY:Industry Partner Afternoon: ModiFace [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1154988
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250909T105500Z
+UID:event-calendar-event-1126595
+DTSTART:20251114T220000Z
+DTEND:20251115T010000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Movie Night Fridays [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1126595
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T135900Z
+UID:event-calendar-event-1150243
+DTSTART:20251120T160000Z
+DTEND:20251120T173000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:BA3200\, Bahen Centre for Information Technology
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series: Jonathan Laz
+ ar – Methods and Tools for Born-Accessible Design [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1150243
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T155500Z
+UID:event-calendar-event-1100490
+DTSTART:20251120T190000Z
+DTEND:20251120T200000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScACtalks: Ishtiaque Ahmed [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1100490
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160500Z
+UID:event-calendar-event-1100524
+DTSTART:20251130T050000Z
+DTEND:20251201T044500Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Fees - Payment Deadline [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=11&year=2025#calendar_event_1100524
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T140000Z
+UID:event-calendar-event-1150245
+DTSTART:20251204T160000Z
+DTEND:20251204T173000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:BA3200\, Bahen Centre for Information Technology
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series 2025–2026: 
+ Sarita Adve – Systems [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1150245
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T140100Z
+UID:event-calendar-event-1150247
+DTSTART:20251209T160000Z
+DTEND:20251209T173000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:BA3200\, Bahen Centre for Information Technology
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series 2025–2026: 
+ Anind Dey – HCI\, ML & Mobile Computing [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1150247
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250909T105500Z
+UID:event-calendar-event-1126596
+DTSTART:20251212T220000Z
+DTEND:20251213T010000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Movie Night Fridays [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1126596
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160300Z
+UID:event-calendar-event-1100520
+DTSTART:20251223T140000Z
+DTEND:20251223T170000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Last day of Semester 1 [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100520
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100527
+DTSTART;VALUE=DATE;VALUE=DATE:20251224
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100527
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100528
+DTSTART;VALUE=DATE;VALUE=DATE:20251225
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100528
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100529
+DTSTART;VALUE=DATE;VALUE=DATE:20251226
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100529
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100530
+DTSTART;VALUE=DATE;VALUE=DATE:20251227
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100530
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100531
+DTSTART;VALUE=DATE;VALUE=DATE:20251228
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100531
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100532
+DTSTART;VALUE=DATE;VALUE=DATE:20251229
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100532
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100533
+DTSTART;VALUE=DATE;VALUE=DATE:20251230
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100533
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100534
+DTSTART;VALUE=DATE;VALUE=DATE:20251231
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=12&year=2025#calendar_event_1100534
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100535
+DTSTART;VALUE=DATE;VALUE=DATE:20260101
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100535
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100536
+DTSTART;VALUE=DATE;VALUE=DATE:20260102
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100536
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100537
+DTSTART;VALUE=DATE;VALUE=DATE:20260103
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100537
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100538
+DTSTART;VALUE=DATE;VALUE=DATE:20260104
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter Break [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100538
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160600Z
+UID:event-calendar-event-1100525
+DTSTART;VALUE=DATE;VALUE=DATE:20260105
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter graduate courses begin [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100525
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160700Z
+UID:event-calendar-event-1100540
+DTSTART:20260106T050000Z
+DTEND:20260107T044500Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Final resume iteration due [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100540
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160700Z
+UID:event-calendar-event-1100541
+DTSTART;VALUE=DATE;VALUE=DATE:20260114
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall course grades available [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100541
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160900Z
+UID:event-calendar-event-1100543
+DTSTART;VALUE=DATE;VALUE=DATE:20260119
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Internship Expo [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100543
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160800Z
+UID:event-calendar-event-1100542
+DTSTART:20260119T050000Z
+DTEND:20260120T044500Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Winter courses: add deadline [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100542
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160900Z
+UID:event-calendar-event-1100544
+DTSTART;VALUE=DATE;VALUE=DATE:20260120
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Internship Expo [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100544
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160900Z
+UID:event-calendar-event-1100545
+DTSTART;VALUE=DATE;VALUE=DATE:20260121
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Internship Expo [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100545
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160900Z
+UID:event-calendar-event-1100546
+DTSTART;VALUE=DATE;VALUE=DATE:20260122
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Internship Expo [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100546
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250924T140100Z
+UID:event-calendar-event-1150249
+DTSTART:20260122T160000Z
+DTEND:20260122T173000Z
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:BA3200\, Bahen Centre for Information Technology
+SEQUENCE:0
+SUMMARY:C.C. “Kelly” Gotlieb Distinguished Lecture Series 2025–2026: 
+ Leo Porter - Effects of GenAI on Computing Education [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1150249
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T160900Z
+UID:event-calendar-event-1100547
+DTSTART;VALUE=DATE;VALUE=DATE:20260123
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Internship Expo [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=01&year=2026#calendar_event_1100547
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161900Z
+UID:event-calendar-event-1100654
+DTSTART:20260210T150000Z
+DTEND:20260210T160000Z
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScACtalks: Sanofi [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100654
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161800Z
+UID:event-calendar-event-1100648
+DTSTART;VALUE=DATE;VALUE=DATE:20260216
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100648
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161800Z
+UID:event-calendar-event-1100649
+DTSTART;VALUE=DATE;VALUE=DATE:20260217
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100649
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161800Z
+UID:event-calendar-event-1100650
+DTSTART;VALUE=DATE;VALUE=DATE:20260218
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100650
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161800Z
+UID:event-calendar-event-1100651
+DTSTART;VALUE=DATE;VALUE=DATE:20260219
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100651
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T161800Z
+UID:event-calendar-event-1100652
+DTSTART;VALUE=DATE;VALUE=DATE:20260220
+CLASS:PUBLIC
+DESCRIPTION:
+LOCATION:
+SEQUENCE:0
+SUMMARY:MScAC Student Personal Time Off [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=02&year=2026#calendar_event_1100652
+X-ALT-DESC;FMTTYPE=text/html:
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20250902T162000Z
+UID:event-calendar-event-1100656
+DTSTART;VALUE=DATE;VALUE=DATE:20260501
+CLASS:PUBLIC
+LOCATION:
+SEQUENCE:0
+SUMMARY:Internship Official Start Date [CSC2703H Y LEC5101]
+URL;VALUE=URI:https://q.utoronto.ca/calendar?include_contexts=course_395513
+ &month=05&year=2026#calendar_event_1100656
+END:VEVENT
+END:VCALENDAR
