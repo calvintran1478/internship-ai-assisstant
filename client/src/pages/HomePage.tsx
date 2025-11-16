@@ -91,7 +91,7 @@ const HomePage = () => {
                     <For each={chat()}>
                         {(chatMessage, index) => (
                             <div class={`w-full flex flex-col ${index() % 2 === 0 ? "items-end" : "items-start"}`}>
-                                <p class={`w-fit border rounded p-4 m-4`}>{chatMessage}</p>
+                                <p class={`w-fit border ${index() % 2 === 0 ? "bg-slate-200" : ""} rounded-lg p-4 m-4`}>{chatMessage}</p>
                             </div>
                         )}
                     </For>
