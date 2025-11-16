@@ -18,3 +18,8 @@ async def get(conn, user_id) -> list[dict[str, str]]:
 async def get_chat(conn, user_id, chat_id) -> list[str]:
     statement = await conn.prepare("SELECT chat_message FROM chat_messages WHERE user_id=$1 AND chat_id=$2 ORDER BY message_number")
     return [row["chat_message"] for row in await statement.fetch(user_id, chat_id)]
+
+async def delete_chat(conn, user_id, chat_id) -> bool:
+    statement = await conn.prepare("DELETE FROM chat_messages WHERE user_id=$1 AND chat_id=$2 RETURNING 1")
+    deleted_messages = await statement.fetch(user_id, chat_id)
+    return len(deleted_messages) != 0

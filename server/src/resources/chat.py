@@ -101,3 +101,18 @@ class ChatResource:
         resp.status = falcon.HTTP_200
         resp.content_type = "application/json"
         resp.text = json.dumps(chat)
+
+    @falcon.before(authenticate_user)
+    async def on_delete_chat(self, req, resp, chat_id):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Delete chat conversation
+        delete_successful = await chat_repository.delete_chat(req.context.conn, req.context.user_id, chat_id)
+
+        if not delete_successful:
+            resp.status = falcon.HTTP_404
+            resp.text = "Chat not found"
+        else:
+            resp.status = falcon.HTTP_204
