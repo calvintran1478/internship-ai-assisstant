@@ -24,11 +24,31 @@ class AsyncPoolMiddleware:
                 );
                 """)
 
+            # Create chat table
+            await conn.execute("""
+                CREATE TABLE IF NOT EXISTS chat_messages(
+                    user_id UUID NOT NULL,
+                    chat_id UUID NOT NULL,
+                    chat_message VARCHAR NOT NULL,
+                    chat_number INTEGER NOT NULL,
+                    UNIQUE (chat_id, chat_number),
+                    CONSTRAINT chat_user_id_fkey FOREIGN KEY(user_id) REFERENCES users(user_id)
+                        ON DELETE CASCADE
+                        ON UPDATE CASCADE
+                );
+                """)
+
+    async def release_conn(self, conn):
+        await self.pool.release(conn)
+
     async def process_shutdown(self, scope, event):
         await asyncio.wait_for(self.pool.close(), 1.0)
 
     async def process_request(self, req, resp):
+        req.context.auto_release_conn = True
+        req.context.release_conn = self.release_conn
         req.context.conn = await self.pool.acquire()
 
     async def process_response(self, req, resp, resource, req_succeeded):
-        await self.pool.release(req.context.conn)
+        if req.context.auto_release_conn:
+            await self.pool.release(req.context.conn)

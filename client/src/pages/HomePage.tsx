@@ -11,6 +11,7 @@ const HomePage = () => {
     const [chat, setChat] = createSignal([] as string[]);
 
     let prompt = "";
+    let chatId = "";
 
     const getName = async () => {
         const token = localStorage.getItem("accessToken");
@@ -48,8 +49,11 @@ const HomePage = () => {
         const response = await fetch(`${apiDomain}/api/v1/chat`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` },
-            body: prompt
+            body: `${chatId}\n${prompt}`
         });
+
+        const location = response.headers.get("location");
+        chatId = location!.substring(location!.lastIndexOf("/") + 1)
 
         const reader = response.body!.getReader();
         const decoder = new TextDecoder("utf-8");
