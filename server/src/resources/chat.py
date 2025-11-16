@@ -36,23 +36,8 @@ class ChatResource:
             return
 
         # Parse query
-        body = (await req.get_media()).split("\n")
-        if len(body) != 2:
-            resp.status = falcon.HTTP_400
-            resp.text = "Malformed request prompt"
-            return
-
-        chat_id = body[0]
-        prompt = body[1]
-
-        # Check if the given chat exists
-        if chat_id == "":
-            chat_id = uuid4()
-        else:
-            if not (await chat_repository.exists(req.context.conn, req.context.user_id, chat_id)):
-                resp.status = falcon.HTTP_404
-                resp.text = "Chat not found"
-                return
+        prompt = await req.get_media()
+        chat_id = uuid4()
 
         # Disable automatic release of database connection to connection pool
         req.context.auto_release_conn = False
@@ -64,6 +49,31 @@ class ChatResource:
         resp.status = falcon.HTTP_201
         resp.set_header("access-control-expose-headers", "location")
         resp.set_header("location", f"{self.server_domain}/api/v1/chat/{chat_id}")
+        resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
+
+    @falcon.before(authenticate_user)
+    async def on_post_chat(self, req, resp, chat_id):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Parse query
+        prompt = await req.get_media()
+
+        # Check if the given chat exists
+        if not (await chat_repository.exists(req.context.conn, req.context.user_id, chat_id)):
+            resp.status = falcon.HTTP_404
+            resp.text = "Chat not found"
+            return
+
+        # Disable automatic release of database connection to connection pool
+        req.context.auto_release_conn = False
+
+        # Add user prompt to chat
+        await chat_repository.create(req.context.conn, req.context.user_id, chat_id, prompt)
+
+        # Use LLM to generate a response
+        resp.status = falcon.HTTP_201
         resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
 
     @falcon.before(authenticate_user)

@@ -46,14 +46,16 @@ const HomePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch(`${apiDomain}/api/v1/chat`, {
+        const response = await fetch(`${apiDomain}/api/v1/chats${chatId}`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` },
-            body: `${chatId}\n${prompt}`
+            body: prompt
         });
 
-        const location = response.headers.get("location");
-        chatId = location!.substring(location!.lastIndexOf("/") + 1)
+        if (response.headers.has("location")) {
+            const location = response.headers.get("location");
+            chatId = location!.substring(location!.lastIndexOf("/"))
+        }
 
         const reader = response.body!.getReader();
         const decoder = new TextDecoder("utf-8");
