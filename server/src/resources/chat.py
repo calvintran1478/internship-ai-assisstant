@@ -1,4 +1,5 @@
 import os
+import json
 import falcon
 from uuid import uuid4
 from middleware.auth_middleware import authenticate_user
@@ -64,3 +65,16 @@ class ChatResource:
         resp.set_header("access-control-expose-headers", "location")
         resp.set_header("location", f"{self.server_domain}/api/v1/chat/{chat_id}")
         resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
+
+    @falcon.before(authenticate_user)
+    async def on_get_chat(self, req, resp, chat_id):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Fetch chat conversation
+        chat = await chat_repository.get_chat(req.context.conn, req.context.user_id, chat_id)
+
+        resp.status = falcon.HTTP_200
+        resp.content_type = "application/json"
+        resp.text = json.dumps(chat)
