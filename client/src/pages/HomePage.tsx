@@ -90,7 +90,9 @@ const HomePage = () => {
                 <div class="flex flex-col items-center">
                     <For each={chat()}>
                         {(chatMessage, index) => (
-                            <p style={`top: ${index() * 80}px`} class={`fixed border rounded p-4 m-4 ${index() % 2 === 0 ? "right-0" : "left-0"}`}>{chatMessage}</p>
+                            <div class={`w-full flex flex-col ${index() % 2 === 0 ? "items-end" : "items-start"}`}>
+                                <p class={`w-fit border rounded p-4 m-4`}>{chatMessage}</p>
+                            </div>
                         )}
                     </For>
                     <form class="flex flex-col fixed bottom-20" onSubmit={sendRequest}>
