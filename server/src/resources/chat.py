@@ -5,6 +5,7 @@ from uuid import uuid4
 from middleware.auth_middleware import authenticate_user
 from repositories import chat_repository
 
+@falcon.before(authenticate_user)
 class ChatResource:
     def __init__(self):
         self.server_domain = os.getenv("SERVER_DOMAIN")
@@ -29,7 +30,6 @@ class ChatResource:
         # Terminate end of LLM stream
         yield None
 
-    @falcon.before(authenticate_user)
     async def on_post(self, req, resp):
         # Get user
         if req.context.user_id == None:
@@ -51,7 +51,6 @@ class ChatResource:
         resp.set_header("location", f"{self.server_domain}/api/v1/chat/{chat_id}")
         resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
 
-    @falcon.before(authenticate_user)
     async def on_post_chat(self, req, resp, chat_id):
         # Get user
         if req.context.user_id == None:
@@ -76,7 +75,6 @@ class ChatResource:
         resp.status = falcon.HTTP_201
         resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
 
-    @falcon.before(authenticate_user)
     async def on_get(self, req, resp):
         # Get user
         if req.context.user_id == None:
@@ -89,7 +87,6 @@ class ChatResource:
         resp.content_type = "application/json"
         resp.text = json.dumps(chats)
 
-    @falcon.before(authenticate_user)
     async def on_get_chat(self, req, resp, chat_id):
         # Get user
         if req.context.user_id == None:
@@ -102,7 +99,6 @@ class ChatResource:
         resp.content_type = "application/json"
         resp.text = json.dumps(chat)
 
-    @falcon.before(authenticate_user)
     async def on_delete_chat(self, req, resp, chat_id):
         # Get user
         if req.context.user_id == None:
