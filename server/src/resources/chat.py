@@ -67,6 +67,19 @@ class ChatResource:
         resp.stream = self.generate_stream(prompt, req.context.llm_client, req.context.conn, req.context.user_id, chat_id, req.context.release_conn)
 
     @falcon.before(authenticate_user)
+    async def on_get(self, req, resp):
+        # Get user
+        if req.context.user_id == None:
+            return
+
+        # Fetch beginning messages and id of each chat
+        chats = await chat_repository.get(req.context.conn, req.context.user_id)
+
+        resp.status = falcon.HTTP_200
+        resp.content_type = "application/json"
+        resp.text = json.dumps(chats)
+
+    @falcon.before(authenticate_user)
     async def on_get_chat(self, req, resp, chat_id):
         # Get user
         if req.context.user_id == None:
