@@ -30,8 +30,8 @@ class AsyncPoolMiddleware:
                     user_id UUID NOT NULL,
                     chat_id UUID NOT NULL,
                     chat_message VARCHAR NOT NULL,
-                    chat_number INTEGER NOT NULL,
-                    UNIQUE (chat_id, chat_number),
+                    message_number INTEGER NOT NULL,
+                    UNIQUE (chat_id, message_number),
                     CONSTRAINT chat_user_id_fkey FOREIGN KEY(user_id) REFERENCES users(user_id)
                         ON DELETE CASCADE
                         ON UPDATE CASCADE
