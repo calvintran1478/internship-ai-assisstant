@@ -66,13 +66,13 @@ const HomePage = () => {
         });
 
         if (response.ok) {
-            return response.json();
+            return await response.json();
         } else if (response.status === 401) {
             navigate("/login");
         }
     }
 
-    const [chats] = createResource(fetchChats)
+    const [chats, modifyChats] = createResource(fetchChats)
 
     createEffect(() => {
         getName()
@@ -97,6 +97,7 @@ const HomePage = () => {
         if (response.headers.has("location")) {
             const location = response.headers.get("location");
             chatId = location!.substring(location!.lastIndexOf("/"))
+            modifyChats.mutate([{"title": prompt, "chat_id": chatId.substring(1)}, ...chats()]);
         }
 
         const reader = response.body!.getReader();
