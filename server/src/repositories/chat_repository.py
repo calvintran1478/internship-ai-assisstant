@@ -13,7 +13,7 @@ async def create(conn, user_id, chat_id, message) -> None:
 
 async def get(conn, user_id) -> list[dict[str, str]]:
     statement = await conn.prepare("SELECT chat_message, chat_id FROM chat_messages WHERE user_id=$1 AND message_number=1")
-    return [{"title": row["chat_message"], "chat_id": str(row["chat_id"])} for row in await statement.fetch(user_id)]
+    return [{"title": row["chat_message"], "chat_id": str(row["chat_id"])} for row in reversed(await statement.fetch(user_id))]
 
 async def get_chat(conn, user_id, chat_id) -> list[str]:
     statement = await conn.prepare("SELECT chat_message FROM chat_messages WHERE user_id=$1 AND chat_id=$2 ORDER BY message_number")
