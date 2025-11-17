@@ -75,7 +75,13 @@ const HomePage = () => {
         });
 
         if (response.ok) {
-            return await response.json();
+            const conversations = await response.json();
+            for (let i = 0; i < conversations.length; i++) {
+                if (conversations[i]["title"].length > 24) {
+                    conversations[i]["title"] = conversations[i]["title"].slice(0, 21) + "..."
+                }
+            }
+            return conversations;
         } else if (response.status === 401) {
             navigate("/login");
         }
@@ -105,8 +111,9 @@ const HomePage = () => {
 
         if (response.headers.has("location")) {
             const location = response.headers.get("location");
+            const shortenedPrompt = prompt.length > 24 ? prompt.slice(0, 21) + "..." : prompt;
             setChatId(location!.substring(location!.lastIndexOf("/")));
-            modifyChats.mutate([{"title": prompt, "chat_id": chatId().substring(1)}, ...chats()]);
+            modifyChats.mutate([{"title": shortenedPrompt, "chat_id": chatId().substring(1)}, ...chats()]);
         }
 
         const reader = response.body!.getReader();
@@ -164,7 +171,7 @@ const HomePage = () => {
     return (
         <div class="flex">
             <Show when={showSidebar()}>
-                <div class={"sticky top-0 flex flex-col items-center w-1/5 h-screen border"}>
+                <div class={"sticky top-0 flex flex-col items-center w-84 h-screen border"}>
                     <button class="w-8/10 text-xl rounded-lg border cursor-pointer bg-slate-200 hover:bg-slate-100 p-2 my-6" onClick={openChat}>New Chat</button>
                     <h1 class="text-2xl font-medium mt-2">Chats</h1>
                     <hr class="w-9/10 my-2"/>
@@ -173,17 +180,17 @@ const HomePage = () => {
                             <div class="relative w-9/10 " onMouseOver={() => setSelectedChatId(conversation["chat_id"])} onMouseLeave={() => setSelectedChatId("")}>
                                 <button class={`m-2 w-9/10 rounded-lg border p-2 cursor-pointer text-left ${chatId() === `/${conversation["chat_id"]}` ? "bg-teal-200 hover:bg-teal-100" : "bg-slate-200 hover:bg-slate-100"}`} onClick={fetchChat}>{conversation["title"]}</button>
                                 <Show when={selectedChatId() === conversation["chat_id"]}>
-                                    <button class="absolute flex items-center justify-center border rounded-lg right-6 top-3 p-1 w-8 h-8 cursor-pointer" onClick={() => setPendingDeleteChatId(pendingDeleteChatId() !== conversation["chat_id"] ? conversation["chat_id"] : "")}>...</button>
+                                    <button class="absolute flex items-center justify-center border rounded-lg right-5 top-3 p-1 w-8 h-8 cursor-pointer" onClick={() => setPendingDeleteChatId(pendingDeleteChatId() !== conversation["chat_id"] ? conversation["chat_id"] : "")}>...</button>
                                 </Show>
                                 <Show when={pendingDeleteChatId() === conversation["chat_id"]}>
-                                    <button class="absolute flex items-center justify-center border rounded-lg bg-white cursor-pointer left-60 top-3 p-1" onClick={deleteChat}>Delete?</button>
+                                    <button class="absolute flex items-center justify-center border rounded-lg bg-white cursor-pointer left-56 top-3 p-1" onClick={deleteChat}>Delete?</button>
                                 </Show>
                             </div>
                         )}
                     </For>
                 </div>
             </Show>
-            <div class={`flex flex-col ${showSidebar() ? "w-4/5" : "w-screen"}`}>
+            <div class={`flex flex-col w-full`}>
                 <Show when={chat().length === 0}>
                     <div class="flex flex-col justify-center items-center h-screen">
                         <form class="flex flex-col items-center" onSubmit={sendRequest}>
@@ -210,8 +217,6 @@ const HomePage = () => {
                         </div>
                     </div>
                 </Show>
-                <div class={`fixed top-0 right-0 h-24 ${showSidebar() ? "w-4/5" : "w-screen"} bg-white`}>
-                </div>
                 <Suspense>
                     <A href="/profile">
                         <div class="flex justify-center items-center fixed top-6 right-6 rounded-full bg-teal-200 w-12 h-12 border">
@@ -220,7 +225,7 @@ const HomePage = () => {
                     </A>
                 </Suspense>
             </div>
-            <button class={`fixed flex items-center justify-center bottom-10 left-10 p-4 border bg-slate-200 hover:bg-slate-100 rounded-xl cursor-pointer h-12 ${showSidebar() ? "w-32" : "w-10"}`} onClick={() => setShowSidebar(!showSidebar())}>{showSidebar() ? "Hide Chats" : ">"}</button>
+            <button class={`fixed flex items-center justify-center bottom-10 left-10 p-4 border bg-slate-200 hover:bg-slate-100 rounded-xl cursor-pointer h-12 ${showSidebar() ? "w-40" : "w-10"}`} onClick={() => setShowSidebar(!showSidebar())}>{showSidebar() ? "Hide Chats" : ">"}</button>
         </div>
     )
 }
