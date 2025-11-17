@@ -3,6 +3,11 @@ import { A } from '@solidjs/router';
 import { useNavigate } from "@solidjs/router";
 import { apiDomain } from "../index"; 
 
+interface Conversation {
+    title: string,
+    chat_id: string
+}
+
 const HomePage = () => {
     const navigate = useNavigate();
 
@@ -12,9 +17,10 @@ const HomePage = () => {
     const [showSidebar, setShowSidebar] = createSignal(false);
 
     const [chatId, setChatId] = createSignal("");
+    const [selectedChatId, setSelectedChatId] = createSignal("");
+    const [pendingDeleteChatId, setPendingDeleteChatId] = createSignal("");
 
     let prompt = "";
-    let selectedChatId = "";
 
     const getName = async () => {
         const token = localStorage.getItem("accessToken");
@@ -36,6 +42,8 @@ const HomePage = () => {
     }
 
     const fetchChat = async (event: Event) => {
+        setPendingDeleteChatId("");
+
         // Prevent refresh
         event.preventDefault();
 
@@ -44,13 +52,13 @@ const HomePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch(`${apiDomain}/api/v1/chats/${selectedChatId}`, {
+        const response = await fetch(`${apiDomain}/api/v1/chats/${selectedChatId()}`, {
             headers: { "Authorization": `Bearer ${token}` }
         });
 
         if (response.ok) {
             setChat(await response.json());
-            setChatId(`/${selectedChatId}`);
+            setChatId(`/${selectedChatId()}`);
         } else if (response.status === 401) {
             navigate("/login");
         }
@@ -119,9 +127,38 @@ const HomePage = () => {
         }
     }
 
+    const deleteChat = async (event: Event) => {
+        // Prevent refresh
+        event.preventDefault();
+
+        const token = localStorage.getItem("accessToken");
+        if (token === null) {
+            navigate("/login");
+        }
+
+        const response = await fetch(`${apiDomain}/api/v1/chats/${pendingDeleteChatId()}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            const newChats = [...chats()];
+            newChats.splice(chats().findIndex((conversation: Conversation) => conversation["chat_id"] === pendingDeleteChatId()), 1);
+            modifyChats.mutate(newChats);
+
+            setChat([]);
+            setChatId("");
+            setSelectedChatId("");
+            setPendingDeleteChatId("");
+        } else if (response.status === 401) {
+            navigate("/login");
+        }
+    }
+
     const openChat = () => {
         setChat([]);
         setChatId("");
+        setPendingDeleteChatId("");
     }
 
     return (
@@ -133,7 +170,15 @@ const HomePage = () => {
                     <hr class="w-9/10 my-2"/>
                     <For each={chats()}>
                         {(conversation) => (
-                            <button class={`m-2 w-9/10 rounded-lg border p-2 cursor-pointer text-left ${chatId() === `/${conversation["chat_id"]}` ? "bg-teal-200 hover:bg-teal-100" : "bg-slate-200 hover:bg-slate-100"}`} onClick={fetchChat} onMouseOver={() => selectedChatId = conversation["chat_id"]}>{conversation["title"]}</button>
+                            <div class="relative w-9/10 " onMouseOver={() => setSelectedChatId(conversation["chat_id"])} onMouseLeave={() => setSelectedChatId("")}>
+                                <button class={`m-2 w-9/10 rounded-lg border p-2 cursor-pointer text-left ${chatId() === `/${conversation["chat_id"]}` ? "bg-teal-200 hover:bg-teal-100" : "bg-slate-200 hover:bg-slate-100"}`} onClick={fetchChat}>{conversation["title"]}</button>
+                                <Show when={selectedChatId() === conversation["chat_id"]}>
+                                    <button class="absolute flex items-center justify-center border rounded-lg right-6 top-3 p-1 w-8 h-8 cursor-pointer" onClick={() => setPendingDeleteChatId(pendingDeleteChatId() !== conversation["chat_id"] ? conversation["chat_id"] : "")}>...</button>
+                                </Show>
+                                <Show when={pendingDeleteChatId() === conversation["chat_id"]}>
+                                    <button class="absolute flex items-center justify-center border rounded-lg bg-white cursor-pointer left-60 top-3 p-1" onClick={deleteChat}>Delete?</button>
+                                </Show>
+                            </div>
                         )}
                     </For>
                 </div>
