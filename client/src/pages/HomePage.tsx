@@ -148,7 +148,7 @@ const HomePage = () => {
                     </div>
                 </Show>
                 <Show when={chat().length !== 0}>
-                    <div class="flex flex-col items-center">
+                    <div class="flex flex-col">
                         <div class="mt-20 mb-44">
                             <For each={chat()}>
                                 {(chatMessage, index) => (
@@ -158,9 +158,11 @@ const HomePage = () => {
                                 )}
                             </For>
                         </div>
-                        <form class="flex flex-col fixed border bottom-20 rounded-lg bg-slate-100" onSubmit={sendRequest}>
-                            <input class="rounded border w-lg h-10 m-2 p-1 rounded-lg bg-white" onChange={(event) => {prompt = event.target.value}} placeholder="Ask me anything..."/>
-                        </form>
+                        <div class="flex flex-col items-center">
+                            <form class="flex flex-col fixed border bottom-20 rounded-lg bg-slate-100" onSubmit={sendRequest}>
+                                <input class="rounded border w-lg h-10 m-2 p-1 rounded-lg bg-white" onChange={(event) => {prompt = event.target.value}} placeholder="Ask me anything..."/>
+                            </form>
+                        </div>
                     </div>
                 </Show>
                 <div class={`fixed top-0 right-0 h-24 ${showSidebar() ? "w-4/5" : "w-screen"} bg-white`}>
