@@ -11,8 +11,9 @@ const HomePage = () => {
     const [chat, setChat] = createSignal([] as string[]);
     const [showSidebar, setShowSidebar] = createSignal(false);
 
+    const [chatId, setChatId] = createSignal("");
+
     let prompt = "";
-    let chatId = "";
     let selectedChatId = "";
 
     const getName = async () => {
@@ -49,7 +50,7 @@ const HomePage = () => {
 
         if (response.ok) {
             setChat(await response.json());
-            chatId = `/${selectedChatId}`;
+            setChatId(`/${selectedChatId}`);
         } else if (response.status === 401) {
             navigate("/login");
         }
@@ -88,7 +89,7 @@ const HomePage = () => {
             navigate("/login");
         }
 
-        const response = await fetch(`${apiDomain}/api/v1/chats${chatId}`, {
+        const response = await fetch(`${apiDomain}/api/v1/chats${chatId()}`, {
             method: "POST",
             headers: { "Authorization": `Bearer ${token}` },
             body: prompt
@@ -96,8 +97,8 @@ const HomePage = () => {
 
         if (response.headers.has("location")) {
             const location = response.headers.get("location");
-            chatId = location!.substring(location!.lastIndexOf("/"))
-            modifyChats.mutate([{"title": prompt, "chat_id": chatId.substring(1)}, ...chats()]);
+            setChatId(location!.substring(location!.lastIndexOf("/")));
+            modifyChats.mutate([{"title": prompt, "chat_id": chatId().substring(1)}, ...chats()]);
         }
 
         const reader = response.body!.getReader();
@@ -120,7 +121,7 @@ const HomePage = () => {
 
     const openChat = () => {
         setChat([]);
-        chatId = "";
+        setChatId("");
     }
 
     return (
@@ -132,7 +133,7 @@ const HomePage = () => {
                     <hr class="w-9/10 my-2"/>
                     <For each={chats()}>
                         {(conversation) => (
-                            <button class="m-2 w-9/10 rounded-lg border p-2 cursor-pointer text-left bg-slate-200 hover:bg-slate-100" onClick={fetchChat} onMouseOver={() => selectedChatId = conversation["chat_id"]}>{conversation["title"]}</button>
+                            <button class={`m-2 w-9/10 rounded-lg border p-2 cursor-pointer text-left ${chatId() === `/${conversation["chat_id"]}` ? "bg-teal-200 hover:bg-teal-100" : "bg-slate-200 hover:bg-slate-100"}`} onClick={fetchChat} onMouseOver={() => selectedChatId = conversation["chat_id"]}>{conversation["title"]}</button>
                         )}
                     </For>
                 </div>
