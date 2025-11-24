@@ -1,1 +1,6 @@
 __pycache__
+
+# Ignore env file
+src/.env
+
+src/rag/adapter_model.safetensors
