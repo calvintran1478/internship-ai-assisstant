@@ -168,6 +168,11 @@ const HomePage = () => {
         setPendingDeleteChatId("");
     }
 
+    const logout = () => {
+        localStorage.removeItem("accessToken");
+        navigate("/login");
+    }
+
     return (
         <div class="flex">
             <Show when={showSidebar()}>
@@ -198,6 +203,7 @@ const HomePage = () => {
                             <input class="border rounded w-lg h-10 p-1" onChange={(event) => {prompt = event.target.value}} placeholder="Ask me anything..."/>
                         </form>
                     </div>
+                    <button class="absolute flex items-center justify-center border cursor-pointer bg-slate-200 hover:bg-slate-100 rounded-lg p-2 right-10 bottom-10" onClick={logout}>Logout</button>
                 </Show>
                 <Show when={chat().length !== 0}>
                     <div class="flex flex-col">
