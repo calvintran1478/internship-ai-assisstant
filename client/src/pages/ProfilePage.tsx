@@ -114,7 +114,7 @@ const ProfilePage = () => {
 
     return (
         <div class="flex flex-col">
-            <button class="absolute flex items-center justify-center border hover:bg-slate-100 cursor-pointer p-2 right-6 top-6" onClick={() => navigate("/home")}>Back</button>
+            <button class="absolute flex items-center justify-center border bg-slate-200 hover:bg-slate-100 cursor-pointer p-2 right-6 top-6 rounded-lg" onClick={() => navigate("/home")}>Back</button>
             <h1 class="text-3xl font-medium m-6">Profile Page</h1>
             <h2 class="text-2xl font-medium mx-6">Resume</h2>
             <div class="flex justify-center">
@@ -122,7 +122,7 @@ const ProfilePage = () => {
             </div>
             <form onSubmit={uploadResume} class="flex items-center">
                 <input class="border w-52 h-8 mx-6" ref={resumeInput} type="file" id="resume"/>
-                <button class="border w-20 h-8 hover:bg-slate-100 cursor-pointer">Upload</button>
+                <button class="border w-20 h-8 bg-slate-200 hover:bg-slate-100 cursor-pointer rounded-lg">Upload</button>
                 <Show when={uploadError() !== ""}>
                     <div class="flex justify-center items-center p-2 mx-6 h-8 border">
                         <p>{uploadError()}</p>
@@ -153,7 +153,7 @@ const ProfilePage = () => {
                             <option value="quantum-computing">Quantum Computing</option>
                         </select>
                     </Suspense>
-                    <button class="border w-12 h-8 ml-8 hover:bg-slate-100 cursor-pointer">Save</button>
+                    <button class="border w-14 h-8 ml-8 rounded-lg bg-slate-200 hover:bg-slate-100 cursor-pointer">Save</button>
                     <Show when={concentrationChanged()}>
                         <span class="text-lg mx-6">(Unsaved)</span>
                     </Show>
