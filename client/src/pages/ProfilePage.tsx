@@ -114,6 +114,7 @@ const ProfilePage = () => {
 
     return (
         <div class="flex flex-col">
+            <button class="absolute flex items-center justify-center border cursor-pointer p-2 right-6 top-6" onClick={() => navigate("/home")}>Back</button>
             <h1 class="text-3xl font-medium m-6">Profile Page</h1>
             <h2 class="text-2xl font-medium mx-6">Resume</h2>
             <div class="flex justify-center">
