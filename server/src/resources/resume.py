@@ -1,6 +1,7 @@
 import os
 import falcon
 import botocore
+import pymupdf
 from middleware.auth_middleware import authenticate_user
 
 @falcon.before(authenticate_user)
@@ -23,6 +24,12 @@ class ResumeResource:
 
         # Read in resume bytes from request body
         resume_data = await req.stream.readall()
+
+        # Check if pdf is valid
+        if not resume_data.startswith(b"%PDF"):
+            resp.status = falcon.HTTP_400
+            resp.text = "Invalid pdf"
+            return
 
         # Check if the user already has a resume uploaded
         resume_id = f"{req.context.user_id}/resume"

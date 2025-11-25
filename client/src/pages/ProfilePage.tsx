@@ -9,6 +9,7 @@ const ProfilePage = () => {
     let concentrationInput!: HTMLSelectElement;
 
     const [concentrationChanged, setConcentrationChanged] = createSignal(false);
+    const [uploadError, setUploadError] = createSignal("");
 
     const fetchConcentration = async () => {
         const token = localStorage.getItem("accessToken");
@@ -82,10 +83,16 @@ const ProfilePage = () => {
 
     const uploadResume = async(event: Event) => {
         event.preventDefault();
+        setUploadError("");
 
         const token = localStorage.getItem("accessToken");
         if (token === null) {
             navigate("/login");
+        }
+
+        if (resumeInput.value === "") {
+            setUploadError("Please enter in a PDF");
+            return;
         }
 
         const response = await fetch(`${apiDomain}/api/v1/resume`, {
@@ -98,6 +105,8 @@ const ProfilePage = () => {
             const blob = new Blob([resumeInput.files![0]]);
             const url = window.URL.createObjectURL(blob);
             modifyResume.mutate(url);
+        } else if (response.status === 400) {
+            setUploadError("Invalid PDF");
         } else if (response.status === 401) {
             navigate("/login");
         }
@@ -113,6 +122,11 @@ const ProfilePage = () => {
             <form onSubmit={uploadResume} class="flex items-center">
                 <input class="border w-52 h-8 mx-6" ref={resumeInput} type="file" id="resume"/>
                 <button class="border w-20 h-8">Upload</button>
+                <Show when={uploadError() !== ""}>
+                    <div class="flex justify-center items-center p-2 mx-6 h-8 border">
+                        <p>{uploadError()}</p>
+                    </div>
+                </Show>
             </form>
             <Suspense fallback={<p>Loading...</p>}>
                 <Show when={resume() !== ""}>
