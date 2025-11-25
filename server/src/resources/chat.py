@@ -5,6 +5,7 @@ import falcon
 from uuid import uuid4
 from middleware.auth_middleware import authenticate_user
 from repositories import chat_repository
+from dashscope import Generation # for qwen api calls, here we want a local qwen model
 # RAG imports
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
@@ -23,33 +24,14 @@ CORPUS_PATH = op.join(op.dirname(__file__), "..", "rag", "corpus_meta.json")
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 
 # RAG setup
-# tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
-# if tokenizer.pad_token is None:
-#     tokenizer.pad_token = tokenizer.eos_token
-# bnb_config = BitsAndBytesConfig(
-#     load_in_4bit=True,
-#     bnb_4bit_use_double_quant=True,
-#     bnb_4bit_quant_type="nf4",
-#     bnb_4bit_compute_dtype=torch.bfloat16,
-# )
-# base_model = AutoModelForCausalLM.from_pretrained(
-#     MODEL_NAME,
-#     quantization_config=bnb_config,
-#     device_map="auto",
-# )
-# model = PeftModel.from_pretrained(base_model, ADAPTER_DIR, device_map="auto")
-# model.eval()  # important for inference
-
-# RAG setup
 finetuned_rag = RAGEngine(
     index_path=INDEX_PATH,
     corpus_path=CORPUS_PATH,
     embed_model_name=EMBED_MODEL_NAME,
     model_name=MODEL_NAME,
-    use_lora_adapter=None, # in case we want to use LoRA adapter
 )
 
-# Fast local generation without streaming
+# Fast local generation without token-by-token streaming
 def generate_stream_fast(prompt, max_new_tokens=512):
     text, _ = finetuned_rag.answer(prompt, max_new_tokens=max_new_tokens)
     # Yield in one chunk (or split into fake streaming chunks if needed)
@@ -83,12 +65,12 @@ class ChatResource:
         if req.context.user_id is None:
             return
 
-        prompt = await req.get_media()
+        query = await req.get_media()
         chat_id = uuid4()
 
         req.context.auto_release_conn = False
 
-        await chat_repository.create(req.context.conn, req.context.user_id, chat_id, prompt)
+        await chat_repository.create(req.context.conn, req.context.user_id, chat_id, query)
 
         resp.status = falcon.HTTP_201
         resp.set_header("access-control-expose-headers", "location")
@@ -105,7 +87,7 @@ class ChatResource:
         # final_prompt = system_prompt + "\nUser: " + prompt
 
         resp.stream = self.generate_stream(
-            prompt,
+            query,
             req.context.conn,
             req.context.user_id,
             chat_id,

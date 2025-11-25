@@ -23,6 +23,8 @@ JSONL_PATH = op.join(op.dirname(__file__), "..", "..", "data", "processed_data",
 INDEX_PATH = op.join(op.dirname(__file__), "..", "..", "data", "faiss", "faiss_index.bin")
 CORPUS_PATH = op.join(op.dirname(__file__), "..", "rag", "corpus_meta.json")
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
+TOP_K = 8
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 # RAG helper functions 
@@ -93,11 +95,6 @@ def build_faiss_hnsw(embeddings: np.ndarray) -> faiss.Index:
     print("FAISS index size:", index.ntotal)
     return index
 
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
-TOP_K = 8
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-
 def build_chatml_prompt(system_prompt: str, user_prompt: str) -> str:
     """
     Build a ChatML-style prompt for Qwen:
@@ -121,20 +118,17 @@ class RAGEngine:
     def __init__(self,
                  index_path: str,
                  corpus_path: str,
-                 embed_model_name: str,
-                 model_name: str,
-                 use_lora_adapter: str = None):
-        # Load index and corpus.
+                 embed_model_name: str = EMBED_MODEL_NAME,
+                 model_name: str = MODEL_NAME
+                 ):
+        # Load index and corpus
         print("Loading FAISS index and corpus...")
         self.index = faiss.read_index(index_path)
         with open(corpus_path, "r", encoding="utf-8") as f:
             self.corpus = json.load(f)
-
-        # Embedding model.
-        print("Loading embedding model:", embed_model_name)
+        # Load embedding model
         self.embed_model = SentenceTransformer(embed_model_name)
-
-        # Tokenizer.
+        # Tokenizer
         print("Loading tokenizer:", model_name)
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
@@ -142,7 +136,6 @@ class RAGEngine:
         )
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
-
         # 4-bit quantization config for T4.
         bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
@@ -150,25 +143,12 @@ class RAGEngine:
             bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.bfloat16,
         )
-
         print("Loading Qwen model in 4-bit...")
-        base_model = AutoModelForCausalLM.from_pretrained(
+        self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
             quantization_config=bnb_config,
             device_map="auto",
         )
-
-        # Attach LoRA adapter if provided.
-        if use_lora_adapter is not None:
-            print("Attaching LoRA adapter from:", use_lora_adapter)
-            self.model = PeftModel.from_pretrained(
-                base_model,
-                use_lora_adapter,
-                torch_dtype=torch.bfloat16,
-                device_map="auto",
-            )
-        else:
-            self.model = base_model
 
         self.model.eval()
 
@@ -216,21 +196,24 @@ class RAGEngine:
         #     "3. Sources (bullet list of [chunk-id] you used)\n"
         # )
         system_instruction = (
-            "You are a knowledgeable and supportive career coach for MScAC students seeking internships. " 
-            "Your role is to provide personalized guidance on technical and behavioral interview questions, resume feedback, and career advice. "
-            "Be constructive, encouraging, and clear, offering actionable tips that help students improve their chances of securing internships. "
-            "When answering coding questions, give explanations that teach the reasoning behind solutions, not just the answers."
-            "Use the provided context ONLY IF relevant to the user's prompt. Otherwise, rely on your own knowledge."
+            "You are a helpful and friendly assistant capable of answering questions and having casual conversation. "
+            "You can respond naturally to greetings, thanks, or small talk without relying on the context. Don't mention the context in such cases. "
+            "Use your own knowledge to answer questions, and consider the provided context only if it is clearly relevant and reliable. "
+            "If the context does not help, ignore it. "
+            "Always be polite, clear, and concise. "
         )
 
         user_message = (
-            f"Question: {query}\n\n"
-            f"Context:\n{context_block}\n"
+            f"[User Query]\n{query}\n\n"
+            "[Retrieved Context]\n"
+            "Use these passages only if they clearly help answer the user request. "
+            "If they seem unrelated or unnecessary, you can ignore them.\n\n"
+            f"{context_block}"
         )
 
         prompt = build_chatml_prompt(system_instruction, user_message)
         return prompt
-
+    
     @torch.no_grad()
     def answer(self, query: str, max_new_tokens: int = 512) -> Tuple[str, List[Dict]]:
         contexts = self.retrieve(query, TOP_K)
@@ -246,9 +229,9 @@ class RAGEngine:
         outputs = self.model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
-            do_sample=True,
-            temperature=0.7,
-            top_p=0.9,
+            do_sample=False, # Change to True and uncomment lines below to enable sampling
+            # temperature=0.7,
+            # top_p=0.9,
             pad_token_id=self.tokenizer.eos_token_id,
         )
 

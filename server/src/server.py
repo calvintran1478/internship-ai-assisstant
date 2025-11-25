@@ -17,7 +17,7 @@ logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logg
 load_dotenv()
 
 # Initialize server with default plain/text content type
-cors_middleware = falcon.CORSMiddleware(allow_origins="https://calvintran1478.github.io", allow_credentials="*")
+cors_middleware = falcon.CORSMiddleware(allow_origins="*", allow_credentials="*")
 app = falcon.asgi.App(media_type=falcon.MEDIA_TEXT, middleware=[AsyncPoolMiddleware(), S3Middleware(), LLMMiddleware(), cors_middleware])
 
 # Set up media handlers

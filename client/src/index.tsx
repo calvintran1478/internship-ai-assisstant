@@ -3,7 +3,7 @@ import { render } from "solid-js/web";
 import { Router, Route } from "@solidjs/router"; 
 import "./index.css"
 
-export const apiDomain = "https://server-rough-fire-7678.fly.dev";
+export const apiDomain = "http://localhost:8000/";
 
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));

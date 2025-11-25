@@ -27,6 +27,7 @@ files = [
 [package.dependencies]
 idna = ">=2.8"
 sniffio = ">=1.1"
+typing_extensions = {version = ">=4.5", markers = "python_version < \"3.13\""}
 
 [package.extras]
 trio = ["trio (>=0.31.0)"]
@@ -891,5 +892,5 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.13"
-content-hash = "213bcebc3c1e3741d479b51a47e5fd8b4b6101415d31e28c480bae2529977128"
+python-versions = ">=3.12"
+content-hash = "edbed6c76f26be6c750b856520d1b2fc0473501aa4d6bf43dcf78a5524bf1a55"
