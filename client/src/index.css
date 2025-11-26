@@ -1,1 +1,11 @@
 @import "tailwindcss";
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden; /* 🚫 no page scroll, only inner containers can scroll */
+}
